@@ -39,7 +39,7 @@ Die gezeigten Befehle stammen aus den vorhandenen Projektwerkzeugen; ein tatsäc
 
 Vinext/React auf Cloudflare Workers mit D1 und R2. Dies ist der tatsächliche Full-Stack-Quellstand, keine Node-/PostgreSQL-Neuimplementierung. Der Entwicklungsserver ist für lokale Arbeit vorgesehen. Ein unabhängiger Produktivbetrieb erfordert D1-/R2-Bindings, sichere Auth-Konfiguration und einen getesteten Administratorzugang. Die bisherige Plattformidentität darf außerhalb des vertrauenswürdigen Sites-Proxys nicht ungeprüft akzeptiert werden.
 
-Das öffentliche Repository enthält keine produktiven Benutzer, Secrets, Sessions oder unveröffentlichten Inhalte. Zwei historische Fotos mit ungeklärten Weitergaberechten und weitere zurückgestellte R2-Gebäudebilder fehlen bewusst; vorhandene Verweise sind dokumentiert. Öffentliche Repository-Sichtbarkeit ersetzt keine Rechtefreigabe für Schulmedien.
+Das öffentliche Repository enthält keine produktiven Benutzer, Secrets, Sessions oder unveröffentlichten Inhalte. Zwei historische Fotos mit ungeklärten Weitergaberechten und weitere zurückgestellte R2-Bilder fehlen bewusst; vorhandene Verweise sind dokumentiert. Öffentliche Repository-Sichtbarkeit ersetzt keine Rechtefreigabe für Schulmedien.
 
 ## Dokumentation
 

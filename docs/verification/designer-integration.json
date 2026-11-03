@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-11-02T10:53:49.012Z",
+  "runtime": "real route handlers, local D1/R2, test-only identity adapter",
+  "passed": 20,
+  "results": [
+    {
+      "name": "A: SVG logo upload sanitizes content and preserves current branding until activation",
+      "result": "passed"
+    },
+    {
+      "name": "A: Reviewed logo activates only on publication and survives independent reads",
+      "result": "passed"
+    },
+    {
+      "name": "B: Header menu, submenu and reordered links persist without changing live navigation",
+      "result": "passed"
+    },
+    {
+      "name": "C: New text section and changed hero image save, reload, reorder and publish",
+      "result": "passed"
+    },
+    {
+      "name": "D: Footer draft does not leak before publication and can be reset",
+      "result": "passed"
+    },
+    {
+      "name": "E: Authors cannot access the designer; editors can draft but cannot approve/publish",
+      "result": "passed"
+    },
+    {
+      "name": "F: A previous full design restores as a private draft, then can be published",
+      "result": "passed"
+    },
+    {
+      "name": "Concurrent draft saves reject stale versions",
+      "result": "passed"
+    },
+    {
+      "name": "Publishing requires approval and passing contrast ratios",
+      "result": "passed"
+    },
+    {
+      "name": "Unknown blocks, script URLs and cross-origin writes are rejected",
+      "result": "passed"
+    },
+    {
+      "name": "Malicious SVG, external SVG resources and missing student consent are rejected",
+      "result": "passed"
+    },
+    {
+      "name": "Page editor shares the approved publication workflow",
+      "result": "passed"
+    },
+    {
+      "name": "Editing a published page preserves its live content and never exposes its draft payload",
+      "result": "passed"
+    },
+    {
+      "name": "Draft page changes publish only after administrator approval",
+      "result": "passed"
+    },
+    {
+      "name": "Referenced media cannot be deleted, including links in design history",
+      "result": "passed"
+    },
+    {
+      "name": "Unauthenticated private preview media stays private",
+      "result": "passed"
+    },
+    {
+      "name": "Media metadata uses optimistic version checks",
+      "result": "passed"
+    },
+    {
+      "name": "Concurrent publication creates exactly one new published version",
+      "result": "passed"
+    },
+    {
+      "name": "Events retain persistent data and export valid ICS after administrative release",
+      "result": "passed"
+    },
+    {
+      "name": "System backup includes every D1 table and design publication history",
+      "result": "passed"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "filename": "nschu01.jpg",
+    "source": "https://www.wezelschule.de/images/admin/03/nschu01.jpg",
+    "alt": "Schulgebäude der Wezelschule Östertal mit Schulhof und Bäumen",
+    "dimensions": [
+      500,
+      333
+    ],
+    "visual_check": "keine erkennbaren Personen",
+    "usage": "nur private interne Abnahme",
+    "rights_status": "ungeklärt; schriftliche Freigabe der Schule vor offizieller Veröffentlichung erforderlich"
+  },
+  {
+    "filename": "nschu02.jpg",
+    "source": "https://www.wezelschule.de/images/admin/03/nschu02.jpg",
+    "alt": "Eingang und Fassade der Grund- und Regelschule Östertal",
+    "dimensions": [
+      500,
+      333
+    ],
+    "visual_check": "keine erkennbaren Personen",
+    "usage": "nur private interne Abnahme",
+    "rights_status": "ungeklärt; schriftliche Freigabe der Schule vor offizieller Veröffentlichung erforderlich"
+  },
+  {
+    "filename": "nschu04.jpg",
+    "source": "https://www.wezelschule.de/images/admin/03/nschu04.jpg",
+    "dimensions": [
+      500,
+      342
+    ],
+    "visual_check": "zwei Personen erkennbar am Eingang",
+    "usage": "NICHT in public übernommen",
+    "rights_status": "ungeklärt"
+  }
+]

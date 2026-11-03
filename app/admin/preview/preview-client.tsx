@@ -1,0 +1,8 @@
+'use client';
+import {useState,useEffect} from 'react';
+import {designSchema,designStyle,blockSchema,type Design} from '../../../lib/design-model';
+import type {SiteSettings,Entry} from '../../../lib/types';
+import {Header,Footer} from '../../shell';
+import {BlockRenderer} from '../../block-renderer';
+import {RichText} from '../../../lib/ui';
+export default function Preview({initial,settings,entries,page,allowMessages}:{initial:Design;settings:SiteSettings;entries:Entry[];page:Entry|null;allowMessages:boolean}){const [design,setDesign]=useState(initial);useEffect(()=>{if(!allowMessages)return;const receive=(event:MessageEvent)=>{if(event.origin!==location.origin||event.source!==parent||event.data?.type!=='wezel-designer')return;const result=designSchema.safeParse(event.data.config);if(result.success)setDesign(result.data);};window.addEventListener('message',receive);return()=>window.removeEventListener('message',receive);},[allowMessages]);const config={...settings,design};return <div className="design-surface" style={designStyle(design) as React.CSSProperties}><div className="preview-private-label">Geschützte Entwurfsvorschau · nicht veröffentlicht</div><Header settings={config}/><main id="main">{page?<><section className="page-hero wrap"><span className="eyebrow">SEITENVORSCHAU</span><h1>{page.title}</h1><p>{page.excerpt}</p></section><section className="page-body wrap">{page.image&&<img className="content-image" src={page.image} alt={page.title}/>}<RichText text={page.body}/></section>{page.blocks&&<BlockRenderer blocks={JSON.parse(page.blocks).map((x:unknown)=>blockSchema.parse(x))} design={design} entries={entries}/>}</>:<BlockRenderer blocks={design.blocks} design={design} entries={entries}/>}</main><Footer settings={config}/></div>;}

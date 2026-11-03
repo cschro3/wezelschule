@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1793611149163,
+      "tag": "0000_first_shocker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1793614345878,
+      "tag": "0001_condemned_rumiko_fujikawa",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1793689064065,
+      "tag": "0002_security_login",
+      "breakpoints": true
+    }
+  ]
+}

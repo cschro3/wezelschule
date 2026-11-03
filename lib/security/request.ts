@@ -1,0 +1,2 @@
+export class SecurityError extends Error {status=400;}
+export async function readSecurityJSON(req:Request){const reader=req.body?.getReader();if(!reader)throw Error('Ungültige Anfrage.');const chunks:Uint8Array[]=[];let size=0;while(true){const r=await reader.read();if(r.done)break;size+=r.value.length;if(size>16384){await reader.cancel();throw Error('Anfrage zu groß.');}chunks.push(r.value);}const bytes=new Uint8Array(size);let n=0;for(const c of chunks){bytes.set(c,n);n+=c.length;}return JSON.parse(new TextDecoder().decode(bytes));}

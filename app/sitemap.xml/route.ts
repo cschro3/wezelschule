@@ -1,0 +1,3 @@
+import {publicEntries} from '../../lib/server';
+export const dynamic='force-dynamic';
+export async function GET(){const all=await publicEntries();const base='https://wezel-next.christoph-schr816017.chatgpt.site';const urls=['','kontakt','downloads','termine','aktuelles','service','schulgebaeude',...all.filter(x=>x.kind==='page').map(x=>x.slug)];return new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+[...new Set(urls)].map(u=>`<url><loc>${base}/${u}</loc></url>`).join('')+'</urlset>',{headers:{'Content-Type':'application/xml','X-Robots-Tag':'noindex'}});}

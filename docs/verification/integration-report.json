@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-11-02T09:38:16.468Z",
+  "passed": 15,
+  "report": [
+    {
+      "name": "Missing authentication is rejected",
+      "result": "passed"
+    },
+    {
+      "name": "Authorized owner initializes verified source content exactly once",
+      "result": "passed"
+    },
+    {
+      "name": "Author creates persistent draft",
+      "result": "passed"
+    },
+    {
+      "name": "Draft stays absent from the public API",
+      "result": "passed"
+    },
+    {
+      "name": "Author cannot publish or edit another author’s source page",
+      "result": "passed"
+    },
+    {
+      "name": "Cross-site writes and missing CSRF marker are rejected",
+      "result": "passed"
+    },
+    {
+      "name": "Editors cannot manage users",
+      "result": "passed"
+    },
+    {
+      "name": "Scheduled publication is hidden, then visible after release time",
+      "result": "passed"
+    },
+    {
+      "name": "Stale writes return conflict and preserve newer version",
+      "result": "passed"
+    },
+    {
+      "name": "Invalid upload signatures are rejected",
+      "result": "passed"
+    },
+    {
+      "name": "Image bytes persist in R2 and are served with nosniff",
+      "result": "passed"
+    },
+    {
+      "name": "Event publishes and exports a real ICS document",
+      "result": "passed"
+    },
+    {
+      "name": "Settings survive subsequent independent reads",
+      "result": "passed"
+    },
+    {
+      "name": "Backup export includes content, versions and media metadata",
+      "result": "passed"
+    },
+    {
+      "name": "Archiving removes content; permanent deletion is separately protected",
+      "result": "passed"
+    }
+  ]
+}

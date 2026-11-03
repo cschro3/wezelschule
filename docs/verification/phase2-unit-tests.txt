@@ -1,0 +1,19 @@
+✔ Default rendering is deterministic without secure-context browser APIs (17.273617ms)
+✔ Contrast calculations use actual luminance and reject white on white (3.213326ms)
+✔ Only predefined blocks and valid navigation URLs enter a saved design (5.790871ms)
+✔ An author cannot publish, manage accounts or edit another author’s draft (2.378157ms)
+✔ Editors cannot publish or manage accounts; school admins publish but cannot perform system operations (0.726205ms)
+✔ Only rights-cleared released content whose date has arrived is visible (0.268993ms)
+✔ CSRF origins are exact and invalid URL schemes cannot enter CMS content (0.887208ms)
+✔ SVG, HTML and forged MIME do not pass the allowlisted file signatures (0.484179ms)
+✔ Weekly appointments retain Berlin local time over DST changes (20.969422ms)
+✔ Monthly appointments clamp to the end of a shorter month (1.329234ms)
+✔ ICS escapes injection and folds long UTF-8 content (1.438296ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 226.6782

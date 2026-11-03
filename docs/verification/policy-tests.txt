@@ -1,0 +1,16 @@
+✔ An author cannot publish, manage accounts or edit another author’s draft (2.196744ms)
+✔ Editors publish but do not manage accounts; school admins cannot perform system operations (0.30983ms)
+✔ Only rights-cleared released content whose date has arrived is visible (0.212429ms)
+✔ CSRF origins are exact and invalid URL schemes cannot enter CMS content (0.612832ms)
+✔ SVG, HTML and forged MIME do not pass the allowlisted file signatures (0.447083ms)
+✔ Weekly appointments retain Berlin local time over DST changes (41.762049ms)
+✔ Monthly appointments clamp to the end of a shorter month (1.016916ms)
+✔ ICS escapes injection and folds long UTF-8 content (1.051738ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 229.274147

@@ -1,0 +1,38 @@
+{
+  "retrieved": "2026-11-02",
+  "notes": "Self-hosted open-source Manrope and Inter. WOFF2 latin variable subsets from Fontsource packages; OFL licenses from official Google Fonts repositories. No external runtime font requests. Latin subset includes German U+00C4 U+00D6 U+00DC U+00E4 U+00F6 U+00FC U+00DF.",
+  "files": [
+    {
+      "file": "Manrope-latin-variable.woff2",
+      "source": "https://cdn.jsdelivr.net/npm/@fontsource-variable/manrope@5.2.8/files/manrope-latin-wght-normal.woff2",
+      "final_url": "https://cdn.jsdelivr.net/npm/@fontsource-variable/manrope@5.2.8/files/manrope-latin-wght-normal.woff2",
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "status": "ok"
+    },
+    {
+      "file": "Inter-latin-variable.woff2",
+      "source": "https://cdn.jsdelivr.net/npm/@fontsource-variable/inter@5.2.8/files/inter-latin-wght-normal.woff2",
+      "final_url": "https://cdn.jsdelivr.net/npm/@fontsource-variable/inter@5.2.8/files/inter-latin-wght-normal.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "status": "ok"
+    },
+    {
+      "file": "Manrope-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "status": "ok"
+    },
+    {
+      "file": "Inter-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+      "final_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "status": "ok"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "source": "actual pre-change staging snapshot restored locally",
+  "migration": "0001_condemned_rumiko_fujikawa.sql",
+  "integrity": "ok",
+  "foreign_key_errors": 0,
+  "results": [
+    {
+      "table": "audit",
+      "rows": 4,
+      "all_original_columns_unchanged": true
+    },
+    {
+      "table": "entries",
+      "rows": 25,
+      "all_original_columns_unchanged": true
+    },
+    {
+      "table": "media",
+      "rows": 1,
+      "all_original_columns_unchanged": true
+    },
+    {
+      "table": "rate_limits",
+      "rows": 1,
+      "all_original_columns_unchanged": true
+    },
+    {
+      "table": "revisions",
+      "rows": 1,
+      "all_original_columns_unchanged": true
+    },
+    {
+      "table": "settings",
+      "rows": 2,
+      "all_original_columns_unchanged": true
+    },
+    {
+      "table": "users",
+      "rows": 1,
+      "all_original_columns_unchanged": true
+    }
+  ]
+}

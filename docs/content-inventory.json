@@ -1,0 +1,584 @@
+{
+  "project": "WEZEL NEXT",
+  "checked_at": "2026-11-02",
+  "scope": "Alle über die öffentliche Hauptnavigation und Inhaltslinks erreichbaren relevanten Seiten; keine Anmeldung, kein Adminzugriff, keine Mutation der Originalwebsite. Druck-/Mail-/Cookievarianten und UI-Assets ausgeschlossen. Kein Anspruch auf nicht verlinkte Altartikel oder geschützte Inhalte.",
+  "counts": {
+    "crawled_urls": 17,
+    "html_200": 14,
+    "pdf_unique": 7,
+    "content_images": 8
+  },
+  "contact": {
+    "name": "Staatliche Regelschule „J.K. Wezel“ Östertal Sondershausen",
+    "long_name": "Staatliche Regelschule „Johann Karl Wezel“ Östertal",
+    "address": "Segelteichstraße 36, 99706 Sondershausen",
+    "telephone_display": "03632/603813",
+    "telephone_uri": "tel:+493632603813",
+    "email": "info@wezelschule.de",
+    "school_authority": "Kyffhäuserkreis",
+    "school_authority_address": "Markt 8, 99706 Sondershausen",
+    "sources": [
+      "https://www.wezelschule.de/index.php/impressum",
+      "https://www.kyffhaeuser.de/bildung-soziales/schulverwaltung-kyffhaeuserkreis/"
+    ],
+    "hours": null,
+    "hours_note": "Keine aktuellen Schul-/Sekretariatsöffnungszeiten bestätigt."
+  },
+  "navigation": [
+    {
+      "title": "Home",
+      "old_url": "https://www.wezelschule.de/index.php",
+      "proposed_new_path": "/"
+    },
+    {
+      "title": "Leitbild",
+      "old_url": "https://www.wezelschule.de/index.php/leitbild",
+      "proposed_new_path": "/schule/leitbild"
+    },
+    {
+      "title": "Schulsozialarbeit",
+      "old_url": "https://www.wezelschule.de/index.php/schulsozialarbeit",
+      "proposed_new_path": "/schueler/schulsozialarbeit"
+    },
+    {
+      "title": "Intern",
+      "old_url": "https://www.wezelschule.de/index.php/intern",
+      "proposed_new_path": "/service"
+    },
+    {
+      "title": "Pläne",
+      "old_url": "https://www.wezelschule.de/index.php/intern/plaene",
+      "proposed_new_path": "/service/vertretungsplan"
+    },
+    {
+      "title": "Schul.Cloud",
+      "old_url": "https://www.wezelschule.de/index.php/intern/schul-cloud",
+      "proposed_new_path": "/lernen/digitales-lernen"
+    },
+    {
+      "title": "Info - Point intern",
+      "old_url": "https://www.wezelschule.de/hip/default.php",
+      "proposed_new_path": "/service/wichtige-links"
+    },
+    {
+      "title": "Formulare",
+      "old_url": "https://www.wezelschule.de/index.php/formulare",
+      "proposed_new_path": "/service/downloads"
+    },
+    {
+      "title": "Impressum",
+      "old_url": "https://www.wezelschule.de/index.php/impressum",
+      "proposed_new_path": "/impressum"
+    },
+    {
+      "title": "Datenschutzerklärung",
+      "old_url": "https://www.wezelschule.de/index.php/impressum/datenschutzerklaerung",
+      "proposed_new_path": "/datenschutz"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://www.wezelschule.de/",
+      "title": "Home",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/aad822352311.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php",
+      "title": "Home",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/4a337c7f6805.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/leitbild",
+      "title": "Leitbild",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/schule/leitbild",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/2e730782de7a.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/schulsozialarbeit",
+      "title": "Schulsozialarbeit",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/schueler/schulsozialarbeit",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/3916781dca5e.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/intern",
+      "title": "Intern",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/service",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/9e05ef3b072f.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/intern/plaene",
+      "title": "Pläne",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/service/vertretungsplan",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/bffe18db1ef4.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/intern/schul-cloud",
+      "title": "Schul.Cloud",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/lernen/digitales-lernen",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/7114df239b7f.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/formulare",
+      "title": "Formulare",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/service/downloads",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/3444610134c2.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/impressum",
+      "title": "Impressum",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/impressum",
+      "migration_status": "Juristisch neu prüfen; keine Alttexte ungeprüft übernehmen",
+      "content_capture": "research/08e368b8e3a4.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/impressum/datenschutzerklaerung",
+      "title": "Datenschutzerklärung",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/datenschutz",
+      "migration_status": "Juristisch neu prüfen; keine Alttexte ungeprüft übernehmen",
+      "content_capture": "research/984f4e5258b6.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/7-aktuelles/4-herzlich-willkommen",
+      "title": "Herzlich Willkommen",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/6a5534852a63.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/datenschutzerklaerung",
+      "title": "Fehlerhafter Altlink Datenschutz",
+      "http_status": null,
+      "error": "HTTP Error 404: Not Found",
+      "new_path": "/datenschutz",
+      "migration_status": "Juristisch neu prüfen; keine Alttexte ungeprüft übernehmen",
+      "content_capture": null,
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/schulsozialarbeit/186-schulsozial26",
+      "title": "Schulsozialarbeit RS Östertal",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/schueler/schulsozialarbeit",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/814accde4541.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/intern/plaene/1-vertretungsplaene",
+      "title": "Vertretungspläne Alias",
+      "http_status": null,
+      "error": "HTTP Error 503: Service Unavailable",
+      "new_path": "/service/vertretungsplan",
+      "migration_status": "Altfehler dokumentiert; Ziel fachlich zugeordnet",
+      "content_capture": null,
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/intern/21-lernnetz-jkw",
+      "title": "Lernnetz JKW Alias",
+      "http_status": null,
+      "error": "HTTP Error 503: Service Unavailable",
+      "new_path": "/lernen/digitales-lernen",
+      "migration_status": "Altfehler dokumentiert; Ziel fachlich zugeordnet",
+      "content_capture": null,
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/formulare/2-uncategorised",
+      "title": "Formulare Kategorie",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/service/downloads",
+      "migration_status": "Öffentlich belegt; in privater Abnahme kurz zusammenfassen/verlinken",
+      "content_capture": "research/678de099ace4.html",
+      "notes": []
+    },
+    {
+      "url": "https://www.wezelschule.de/index.php/impressum/datenschutzerklaerung/27-impressum",
+      "title": "Impressum Kategorie",
+      "http_status": 200,
+      "error": null,
+      "new_path": "/datenschutz",
+      "migration_status": "Juristisch neu prüfen; keine Alttexte ungeprüft übernehmen",
+      "content_capture": "research/951d538152e3.html",
+      "notes": []
+    }
+  ],
+  "documents": [
+    {
+      "url": "https://www.wezelschule.de/images/verysimple/79/Anmeldebogen_RS_neue_5_Klasse_2026.pdf",
+      "titles": [
+        "Anmeldebogen neue Klassenstufe 5"
+      ],
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/formulare",
+        "https://www.wezelschule.de/index.php/formulare/2-uncategorised"
+      ],
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": "890235",
+      "pdf_magic_verified": true,
+      "final_url": "https://www.wezelschule.de/images/verysimple/79/Anmeldebogen_RS_neue_5_Klasse_2026.pdf",
+      "migration": "Link auf offizielle Quelldatei, bis Übernahmerechte und aktuelle Version freigegeben sind",
+      "rights_status": "ungeklärt"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/verysimple/79/01_Kl_5-6_Schlerdaten-Erfassungsbogen-Neuaufnahme_RS.pdf",
+      "titles": [
+        "Schüleranmeldung Klasse 5/6"
+      ],
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/formulare",
+        "https://www.wezelschule.de/index.php/formulare/2-uncategorised"
+      ],
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": "178309",
+      "pdf_magic_verified": true,
+      "final_url": "https://www.wezelschule.de/images/verysimple/79/01_Kl_5-6_Schlerdaten-Erfassungsbogen-Neuaufnahme_RS.pdf",
+      "migration": "Link auf offizielle Quelldatei, bis Übernahmerechte und aktuelle Version freigegeben sind",
+      "rights_status": "ungeklärt"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/verysimple/79/02_Merkblatt_zum_Religionsunterricht.pdf",
+      "titles": [
+        "Information Klasse 5/6 Religion - Unterricht",
+        "Information Klasse 7 bis 10 Religion - Unterricht"
+      ],
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/formulare",
+        "https://www.wezelschule.de/index.php/formulare/2-uncategorised"
+      ],
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": "72823",
+      "pdf_magic_verified": true,
+      "final_url": "https://www.wezelschule.de/images/verysimple/79/02_Merkblatt_zum_Religionsunterricht.pdf",
+      "migration": "Link auf offizielle Quelldatei, bis Übernahmerechte und aktuelle Version freigegeben sind",
+      "rights_status": "ungeklärt"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/verysimple/79/Kl5-3Merkblatt-Art13_Muster_ABS-02.pdf",
+      "titles": [
+        "Datenschutzblatt Anmeldung Klasse 5/6 - Eltern"
+      ],
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/formulare",
+        "https://www.wezelschule.de/index.php/formulare/2-uncategorised"
+      ],
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": "362395",
+      "pdf_magic_verified": true,
+      "final_url": "https://www.wezelschule.de/images/verysimple/79/Kl5-3Merkblatt-Art13_Muster_ABS-02.pdf",
+      "migration": "Link auf offizielle Quelldatei, bis Übernahmerechte und aktuelle Version freigegeben sind",
+      "rights_status": "ungeklärt"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/verysimple/79/Kl7-1Schlerdaten-Erfassungsbogen-Neuaufnahme_RSOestertal.pdf",
+      "titles": [
+        "Schüleranmeldung Klasse 7 bis 10"
+      ],
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/formulare",
+        "https://www.wezelschule.de/index.php/formulare/2-uncategorised"
+      ],
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": "681422",
+      "pdf_magic_verified": true,
+      "final_url": "https://www.wezelschule.de/images/verysimple/79/Kl7-1Schlerdaten-Erfassungsbogen-Neuaufnahme_RSOestertal.pdf",
+      "migration": "Link auf offizielle Quelldatei, bis Übernahmerechte und aktuelle Version freigegeben sind",
+      "rights_status": "ungeklärt"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/verysimple/79/Kl7-3Merkblatt-Art13_Muster_ABS-02_Kl7.pdf",
+      "titles": [
+        "Datenschutzblatt Anmeldung Klasse 7 bis 10 - Eltern"
+      ],
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/formulare",
+        "https://www.wezelschule.de/index.php/formulare/2-uncategorised"
+      ],
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": "362395",
+      "pdf_magic_verified": true,
+      "final_url": "https://www.wezelschule.de/images/verysimple/79/Kl7-3Merkblatt-Art13_Muster_ABS-02_Kl7.pdf",
+      "migration": "Link auf offizielle Quelldatei, bis Übernahmerechte und aktuelle Version freigegeben sind",
+      "rights_status": "ungeklärt"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/verysimple/79/Aufnahmeantrag_Frderverein-2026.pdf",
+      "titles": [
+        "Anmeldung Förderverein Regelschule 2026"
+      ],
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/formulare",
+        "https://www.wezelschule.de/index.php/formulare/2-uncategorised"
+      ],
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": "455205",
+      "pdf_magic_verified": true,
+      "final_url": "https://www.wezelschule.de/images/verysimple/79/Aufnahmeantrag_Frderverein-2026.pdf",
+      "migration": "Link auf offizielle Quelldatei, bis Übernahmerechte und aktuelle Version freigegeben sind",
+      "rights_status": "ungeklärt"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://www.wezelschule.de/images/admin/03/nschu01.jpg",
+      "alt_on_original": "",
+      "source_pages": [
+        "https://www.wezelschule.de/",
+        "https://www.wezelschule.de/index.php",
+        "https://www.wezelschule.de/index.php/7-aktuelles/4-herzlich-willkommen"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Keine öffentliche Übernahme ohne Freigabe",
+      "visual_check": "Keine erkennbaren Personen",
+      "private_preview_copy": "public/school/nschu01.jpg",
+      "dimensions": [
+        500,
+        333
+      ]
+    },
+    {
+      "url": "https://www.wezelschule.de/images/admin/03/nschu02.jpg",
+      "alt_on_original": "schule01",
+      "source_pages": [
+        "https://www.wezelschule.de/",
+        "https://www.wezelschule.de/index.php",
+        "https://www.wezelschule.de/index.php/7-aktuelles/4-herzlich-willkommen"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Keine öffentliche Übernahme ohne Freigabe",
+      "visual_check": "Keine erkennbaren Personen",
+      "private_preview_copy": "public/school/nschu02.jpg",
+      "dimensions": [
+        500,
+        333
+      ]
+    },
+    {
+      "url": "https://www.wezelschule.de/images/admin/03/nschu04.jpg",
+      "alt_on_original": "",
+      "source_pages": [
+        "https://www.wezelschule.de/",
+        "https://www.wezelschule.de/index.php",
+        "https://www.wezelschule.de/index.php/7-aktuelles/4-herzlich-willkommen"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Nicht für neue Website kopiert; Einwilligung/Bildrechte fehlen",
+      "visual_check": "Zwei Personen am Eingang erkennbar"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/Leitbild_26.png",
+      "alt_on_original": "Leitbild_26.png",
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/leitbild"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Keine öffentliche Übernahme ohne Freigabe"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/Schulsozial2026.png",
+      "alt_on_original": "Schulsozial2026",
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/schulsozialarbeit",
+        "https://www.wezelschule.de/index.php/schulsozialarbeit/186-schulsozial26"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Nicht kopieren ohne Freigabe; echtes Angebot über Quellseite verlinken",
+      "visual_check": "Illustration Schulsozialarbeit; keine Kontaktperson oder Sprechzeiten im Bild"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/Vertretungsplan2025.png",
+      "alt_on_original": "Vertretungsplan2025.png",
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/intern",
+        "https://www.wezelschule.de/index.php/intern/plaene"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Keine alten Anleitungsbilder übertragen; echte externe Loginlinks anbieten"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/Schul.png",
+      "alt_on_original": "Schul.png",
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/intern",
+        "https://www.wezelschule.de/index.php/intern/schul-cloud"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Keine alten Anleitungsbilder übertragen; echte externe Loginlinks anbieten"
+    },
+    {
+      "url": "https://www.wezelschule.de/images/Artikel_1/impress.jpg",
+      "alt_on_original": "impress",
+      "source_pages": [
+        "https://www.wezelschule.de/index.php/impressum",
+        "https://www.wezelschule.de/index.php/impressum/datenschutzerklaerung/27-impressum"
+      ],
+      "rights_status": "ungeklärt",
+      "migration_status": "Keine öffentliche Übernahme ohne Freigabe"
+    }
+  ],
+  "external_services": [
+    {
+      "title": "Vertretungsplan",
+      "url": "https://www.stundenplan24.de/",
+      "source": "https://www.wezelschule.de/index.php/intern/plaene",
+      "verified": "Offizielle Schulverlinkung und öffentliche Dienst-Startseite",
+      "note": "Schulnummer nicht ausgedacht; keine Zugangsdaten übernehmen oder sammeln"
+    },
+    {
+      "title": "Schul.Cloud",
+      "url": "https://app.schul.cloud/#/start/login",
+      "source": "https://www.wezelschule.de/index.php/intern/schul-cloud",
+      "verified": "Link im offiziellen HTML, als Bild-Link ohne Linktext",
+      "note": "Nur externer Link; keine Einbettung oder Datenübertragung"
+    },
+    {
+      "title": "cevex Home.InfoPoint",
+      "url": "https://www.wezelschule.de/hip/default.php",
+      "source": "https://www.wezelschule.de/",
+      "verified": "HTTPS-Anmeldeseite erreichbar",
+      "note": "Originalnavigation verlinkt HTTP; neues Angebot ausschließlich HTTPS. Keine Anmeldung vorgenommen, keine Leistungs-/Fehlzeitdaten gelesen."
+    },
+    {
+      "title": "Berufsberatung an der Wezelschule",
+      "url": "https://www.arbeitsagentur.de/vor-ort/thueringen-nord/rsoestertal",
+      "source": "Bundesagentur für Arbeit",
+      "verified": "Offizielle schulspezifische Seite",
+      "note": "Suchindex und aktueller Open-Abruf nennen unterschiedliche Kontaktpersonen; keinen Namen fest übernehmen."
+    },
+    {
+      "title": "Schulträger / Schulprofil",
+      "url": "https://www.kyffhaeuser.de/bildung-soziales/schulverwaltung-kyffhaeuserkreis/",
+      "source": "Landratsamt Kyffhäuserkreis",
+      "verified": "Offizielle Schulträgerseite bestätigt Anschrift, Telefon, Mail, Profil und Projekte"
+    }
+  ],
+  "verified_profile": {
+    "items": [
+      "Individuelle und differenzierte Aufgaben sowie offener Unterricht",
+      "Vernetzung von Lernstoff mit praktischem Bezug",
+      "Eigenverantwortliches Lernen, Methodentraining und nachhaltiges Lernen",
+      "Technik und Naturwissenschaften",
+      "Mediales und digitales Lernen",
+      "Stützpunktschule mit Vorkurs"
+    ],
+    "projects": [
+      "BUDDY",
+      "Demokratisches Handeln",
+      "ViL – Verständnisintensives Lernen"
+    ],
+    "source": "https://www.kyffhaeuser.de/bildung-soziales/schulverwaltung-kyffhaeuserkreis/"
+  },
+  "leitbild_paraphrases": {
+    "items": [
+      "Ehrlicher, toleranter und offener Umgang",
+      "Respekt und gegenseitiges Verständnis zwischen Lehrkräften und Schülern",
+      "Leistungsbereitschaft erwarten und anerkennen",
+      "Chancengleichheit durch individuelle Förderung",
+      "Praxisnahes und fächerverbindendes Lernen",
+      "Gemeinsame Festlegungen als Team umsetzen",
+      "Zusammenarbeit von Eltern, Schule und Partnern",
+      "Digitale Medien wirksam und reflektiert nutzen",
+      "Sprachintensivkurse bereiten auf die Anforderungen der Regelschule vor"
+    ],
+    "source": "https://www.wezelschule.de/index.php/leitbild"
+  },
+  "news": [],
+  "events": [],
+  "editorial_drafts_required": [
+    "Schulgeschichte",
+    "Schulgebäude-Detailbeschreibung",
+    "Aktuelles Unterrichtsangebot und Fachbereiche",
+    "Aktuelle AGs",
+    "Aktuelle Projektberichte",
+    "Krankmeldung/Fehlzeitenprozess",
+    "Schulessenanbieter",
+    "Sekretariatsöffnungszeiten",
+    "Namentliche aktuelle Ansprechpartner",
+    "Fotorechte und Einwilligungen",
+    "Neue rechtliche Texte/Barrierefreiheitserklärung"
+  ],
+  "findings": [
+    "Keine echten aktuellen News oder Termine auf der öffentlich verlinkten Homepage gefunden.",
+    "Seite Schulsozialarbeit enthält aktuell nur eine Illustration, keine verifizierten persönlichen Kontaktangaben.",
+    "Alte Datenschutzerklärung nennt Google Analytics und stammt aus 2018; nicht als Erklärung der neuen Website übernehmen.",
+    "Cookie-Informationslink /datenschutzerklaerung liefert HTTP 404.",
+    "Zwei interne Inhaltsalias-URLs lieferten HTTP 503, die zugehörigen Hauptseiten dagegen 200.",
+    "Öffentliche Kontaktdaten zusätzlich beim offiziellen Schulträger bestätigt.",
+    "Schul.Cloud-Link ist im HTML als anklickbares Bild vorhanden, im reinen Textabruf nicht sichtbar.",
+    "Außenfoto nschu04.jpg wegen Personen ausgeschlossen.",
+    "Keine Bild-/Textnutzungsrechte aus bloßer Erreichbarkeit abgeleitet."
+  ],
+  "excluded_template_links": [
+    "http://www.plustheme.com",
+    "https://aviftopngconverter.com/"
+  ],
+  "source_web_refs": [
+    "turn1view0",
+    "turn2view0",
+    "turn2view1",
+    "turn2view2",
+    "turn2view3",
+    "turn2view4",
+    "turn3view0",
+    "turn3view1",
+    "turn3view2",
+    "turn3view3",
+    "turn3view4",
+    "turn5view0",
+    "turn5view1",
+    "turn6view0",
+    "turn6view1"
+  ]
+}
