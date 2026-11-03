@@ -37,6 +37,8 @@ Worker-Tests verwenden isolierte D1/R2-Bindings. E-Mail- und externe ICS-Transpo
 
 ## Dokumentation
 
+- [Abschließender Freigabebericht und Ablaufplan](docs/FINAL-RELEASE-READINESS.md)
+
 - [Gemeinsamer Prüfbericht Phase 3 und 4](docs/PHASE4-PRUEFBERICHT.md)
 - [Kalender-Handbuch und Formatgrenzen](docs/KALENDER-HANDBUCH.md)
 - [Sicherer Login-Rollout und Wiederherstellung](docs/SECURITY-ROLLOUT.md)

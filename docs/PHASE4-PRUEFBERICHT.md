@@ -1,10 +1,12 @@
 # WEZEL NEXT – Gemeinsamer Prüfbericht Phase 3 und Phase 4
 
-Stand: 03.11.2026. Ausgangspunkt ist die gespeicherte Version 8, Quellcommit `a904cacc5a8151731d09b973b0c3400ddc54fd43`. Die neue Folgeversion ist zur Speicherung **ohne Deployment** vorbereitet. Ihre tatsächlich vergebene Versionsnummer wird bei der Übergabe genannt. Die laufende private Site, D1-/R2-Daten, bestehende Benutzer, Veröffentlichungen und Domain wurden nicht verändert.
+Aktualisierung der Abnahme: siehe [abschließender Freigabebericht](FINAL-RELEASE-READINESS.md). Die gespeicherte Version 9 bleibt unveröffentlicht.
+
+Stand des ursprünglichen Phase-4-Laufs: 03.11.2026. Ausgangspunkt ist die gespeicherte Version 8, Quellcommit `a904cacc5a8151731d09b973b0c3400ddc54fd43`. Die neue Folgeversion ist zur Speicherung **ohne Deployment** vorbereitet. Ihre tatsächlich vergebene Versionsnummer wird bei der Übergabe genannt. Die laufende private Site, D1-/R2-Daten, bestehende Benutzer, Veröffentlichungen und Domain wurden nicht verändert.
 
 ## Ergebnis
 
-**130 automatisierte Prüfszenarien bestehen**, dazu TypeScript und ein vollständiger Worker-/Frontend-Build. Die Produktionsabhängigkeitsprüfung meldet null Schwachstellen. Die verpflichtende visuelle iPhone-/iPad-Abnahme ist **nicht abgeschlossen**: Der verwaltete Vorschauprozess meldet `http://terminal.local:4173/`, aber der Cloud-Browser erhält `ERR_CONNECTION_REFUSED`. Die Oberfläche wurde deshalb nicht als visuell abgenommen erklärt. Es wurde kein anderer Server, keine abweichende Netzwerkroute und kein öffentliches Deployment als Umgehung angelegt.
+**130 automatisierte Prüfszenarien bestehen**, dazu TypeScript und ein vollständiger Worker-/Frontend-Build. Die Produktionsabhängigkeitsprüfung meldet null Schwachstellen. Die lokale Vorschau wurde nach Wiederherstellung des fehlenden Ausführungsprofils und Vorbereitung der isolierten Datenbank wieder erreichbar. Inzwischen wurden 15 Darstellungen der Originalkomponenten in Chrome-Frames mit Desktop-, iPhone- und iPad-Breite gemessen; keine zeigte horizontalen Dokumentüberlauf. Das sind Layouttests mit lesenden Testfixtures. Eine persönliche authentifizierte Browser-End-to-End- und echte Safari-/Geräteabnahme sind weiterhin offen; die vollständige Entwicklungsansicht zeigte zusätzlich eine RSC-Suspense-Warnung. Details und Nachweise stehen im abschließenden Freigabebericht.
 
 Die Phase-3-Prüfung lief erneut gegen den gemeinsamen kompilierten Worker. Passwortlogin, TOTP, Einmal-Wiederherstellungscodes, Passwort-Reset, Sitzungsentzug und serverseitige Rollenprüfungen bestehen in der isolierten Testumgebung. Kalender-APIs werden zusätzlich vor vollständiger MFA-Anmeldung abgewiesen und danach zugelassen. Redakteure dürfen importieren, aber weder Quellen administrieren noch veröffentlichen.
 
@@ -56,7 +58,7 @@ Vor späterem Rollout: vollständige verschlüsselte D1-/R2-Sicherung und Wieder
 | 12 | Nach Neuladen/Neustart | Bestanden: erneut gelesener Bericht und zwei getrennte Node-Prozesse; beide gespeicherten Termine erhalten, öffentlicher Feed weiterhin korrekt eingeschränkt. |
 | 13 | Öffentliche Sichtbarkeit | Bestanden: Entwurf → Freigegeben → Veröffentlicht über tatsächliche CMS-API; veröffentlichte Fassung und ICS kontrolliert. |
 | 14 | Interne Termine schützen | Bestanden: intern markierter veröffentlichter Termin fehlt in Inhalts-API, Kalenderfeed, altem Feed und direkter Detailroute; Einzel-ICS liefert 404. |
-| 15 | iPhone/iPad | Offen: responsive Gestaltung implementiert, Browser-Vorschau nicht erreichbar. Keine Screenshot-/Touch-Abnahme behauptet. |
+| 15 | iPhone/iPad | 15 Chrome-Layoutmessungen für Login/Admin/Designer/Kalender/Import in 1280/390/768 px bestanden, Screenshots vorhanden. Isolierte Originalkomponenten mit Testdaten, keine persönliche Auth-E2E-/Safari-/Hardware-Abnahme. |
 | 16 | Bestehende Termine erhalten | Bestanden: vor Migration angelegter Termin und bestehende Benutzer nach allen Importoperationen unverändert geprüft. |
 
 ## Prüfsummen der Tests
@@ -86,7 +88,7 @@ Zusätzlich wurde ein realer SQLite-Triggerfehler im zweiten Datensatz eines Imp
 
 ## Grenzen und offene Punkte
 
-1. Visuelle iPhone-/iPad-Abnahme und vollständiger Browserdurchlauf des Assistenten sind blockiert und vor Freigabe nachzuholen.
+1. Isolierte Layoutprüfung ist nachgeholt. Vollständiger authentifizierter Browserdurchlauf und echte Safari-/Geräteabnahme fehlen; die RSC-Suspense-Warnung in der vollständigen Entwicklungsansicht ist zu klären.
 2. Echte Phase-3-Mailzustellung, persönliche Administratorübernahme, TOTP-Einrichtung mit dem echten Konto und Wiederherstellungsweg sind weiterhin offen.
 3. Keine Google-/Microsoft-OAuth-Anbindung, keine privaten Zugangscodes und keine zeitgesteuerte Synchronisierung. ICS-Quellen werden nur manuell als Vorschau abgerufen.
 4. RRULE unterstützt die im Kalender-Handbuch genannten Teilmengen. Serienausnahmen/abgesagte Termine werden zur bewussten manuellen Behandlung zurückgewiesen. Die Anzeige ist auf 5.000 Vorkommen pro Zeitraum begrenzt.
