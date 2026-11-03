@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-11-03T11:16:56.684Z",
+  "source": {
+    "repository": "cschro3/wezelschule",
+    "branch": "phase5-testbetrieb",
+    "commit": "c68517161c6c5b6142087707c74eadc73abb41a7",
+    "ci": "https://github.com/cschro3/wezelschule/actions/runs/41623705090",
+    "ciResult": "success"
+  },
+  "original": {
+    "projectId": "appgprj_6ae8542b54bc8191b9a0048a8cc1c149",
+    "savedVersion": 9,
+    "version9DeploymentId": null,
+    "accessRevision": 1,
+    "allowedUsers": 1,
+    "d1Bindings": [
+      "DB"
+    ],
+    "tables": [
+      "audit",
+      "design_drafts",
+      "design_history",
+      "entries",
+      "media",
+      "rate_limits",
+      "revisions",
+      "settings",
+      "users"
+    ]
+  },
+  "test": {
+    "projectId": "appgprj_6ae9c14e16008191b530e52d6d4afac8",
+    "createdSites": 1,
+    "savedVersionCount": 0,
+    "liveURL": null,
+    "previewURL": null,
+    "role": "owner",
+    "accessMode": "custom",
+    "accessPolicyRevision": 1,
+    "allowedUsers": 1,
+    "allowedGroups": 0,
+    "externalVisitors": 0,
+    "soleOwnerMatchesAuthorizedOriginalOwner": true,
+    "d1Bindings": [],
+    "tables": [],
+    "runtimeRevision": 0,
+    "runtimeKeys": [],
+    "physicalD1ResourceId": null,
+    "physicalR2ResourceIdentifier": null
+  },
+  "operations": {
+    "sourcePushes": 0,
+    "versionsSaved": 0,
+    "deploymentsStarted": 0,
+    "hostedMigrations": 0,
+    "productiveMigrations": 0,
+    "accountsCreated": 0,
+    "dataImports": 0,
+    "emailsSent": 0,
+    "accessChanges": 0,
+    "pr1Merged": false,
+    "paidExternalResourcesCreated": 0
+  },
+  "gate": {
+    "result": "blocked_before_deployment",
+    "reason": "Native Sites responses expose logical bindings only. New project reports no D1 binding. Physical D1 UUID and R2 bucket/account identifiers cannot be inspected or independently provisioned through the available tool surface before deployment. Supported deployment applies pending migrations before Worker upload; requested resource-ID check therefore cannot be completed first.",
+    "doNotCreateAnotherSite": true
+  },
+  "browserTests": {
+    "loginLogout": "not_run_no_deployment",
+    "passwordMFA": "not_run_no_deployment",
+    "adminDesigner": "not_run_no_deployment",
+    "mediaDocuments": "not_run_no_deployment",
+    "calendarImports": "not_run_no_deployment",
+    "workflow": "not_run_no_deployment",
+    "responsive": "not_run_no_deployment",
+    "rscWarning": "not_verified_for_new_instance"
+  }
+}
