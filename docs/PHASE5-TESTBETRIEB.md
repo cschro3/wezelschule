@@ -47,7 +47,7 @@ Für die visuelle Prüfung wurden die aktuell veröffentlichten 15 Inhaltsdatens
 | Öffentliche Seiten und Navigation | Backend/SSR und 60 Browserzustände bestanden | Dev-RSC-/Suspense-Warnung | P1 | Entwicklungswarnung klären; vollständige Browserabnahme nachholen |
 | Serviceseite mobil | Fehler behoben und nachgemessen | Vorher 439 px Inhalt bei 375 px verfügbarem Platz; nachher 375/375 | Behoben | Änderung im separaten Zweig prüfen; noch nicht in gespeicherter Version 9 |
 | Logo, Header, Footer | Sichtbare Logos in allen 60 Zuständen geladen | Echte Safari-/Geräteabnahme fehlt | P2 | Auf iPhone und iPad gegenprüfen |
-| Öffentliche Medien | Acht referenzierte Dateien erfolgreich gelesen | Keine vollständige rechtliche Bildrechteprüfung | Redaktionell | Schule bestätigt inhaltliche Nutzungsfreigaben |
+| Öffentliche Medien | Acht referenzierte Dateien erfolgreich gelesen; zwei im GitHub-Stand fehlende Original-Schulfotos ergänzt | Keine vollständige rechtliche Bildrechteprüfung | Bestand korrigiert / redaktionell | Schule bestätigt inhaltliche Nutzungsfreigaben |
 | Downloads | Sieben Original-PDFs mit HTTP 200/PDF-Signatur | Inhaltliche Aktualität und Barrierefreiheit nicht bestätigt | Redaktionell | Verantwortliche prüfen Formulare |
 | Kontakt | Konfigurierte Adresse, Telefon- und Mailverweise dargestellt | Keine Telefonnummer angerufen, keine echte E-Mail gesendet | Redaktionell | Schule bestätigt Kontaktdaten |
 | Login / Logout / Session-Sicherheit | Backend einschließlich falschem Passwort, Cookies, Entzug, Timeout und Rate Limit bestanden | Vollständige authentifizierte Browserbedienung fehlt | P1 | Persönlich oder über sicheren unterstützten Testzugang abnehmen |
@@ -65,11 +65,13 @@ Für die visuelle Prüfung wurden die aktuell veröffentlichten 15 Inhaltsdatens
 | Monat / Woche / Liste / Filter / Details | Reale öffentliche Browserbedienung bestanden | Kalenderabo durch private äußere Sites-Sperre begrenzt | Betriebsgrenze | Keine heimliche Öffnung der Site |
 | Bestehende Daten / Adminzugang | Keine gehosteten Schreibaktionen; Ausgangs-ID im lokalen Übernahmetest erhalten | Kein vollständiger produktiver D1/R2-Restore durchgeführt | P1 | Betreiberbackup und Restore vor jeder Übernahme |
 
-## Nachweisbare Korrektur
+## Nachweisbare Korrekturen
 
 `app/globals.css`: Unter 600 px werden Servicekarten in einer flexiblen einzelnen Spalte dargestellt. Zuvor erzwangen die Mindestbreiten zweier Karten bei Smartphone-Breite einen seitlichen Überlauf. Nachgemessen: 439 → 375 px Scrollbreite bei unverändert 375 px verfügbarer Breite. Keine Inhalte wurden entfernt und kein `overflow:hidden` zum Verdecken des Problems verwendet.
 
 Dies ist ein **unveröffentlichter Phase-5-Patch auf Version 9**. Die gespeicherte Sites-Version 9 wurde nicht ersetzt und keine neue Versionsnummer erfunden.
+
+Der erste zusätzliche GitHub-CI-Lauf meldete außerdem ein fehlendes `dist/client/school/nschu01.jpg`. Ursache: Im GitHub-Quellbaum fehlten beide Schulgebäudefotos, obwohl sie im gespeicherten Sites-Original vorhanden sind. `public/school/nschu01.jpg` und `public/school/nschu02.jpg` werden exakt aus diesem Originalbestand ergänzt; ihre Git-Blob-Hashes stimmen mit dem Version-9-Quellcommit überein. Die vorhandenen Quellen-/Rechtehinweise bleiben erhalten. Dies ist eine Reparatur des GitHub-Dateibestands, keine neue Bildbeschaffung und keine produktive Veröffentlichung. Die Build-/Medienprüfung bleibt als Regressionstest bestehen.
 
 Zusätzlich: `tests/phase5-testbetrieb.mjs` und ein entsprechender Testschritt in `.github/workflows/ci.yml`. Die CI enthält ausschließlich Prüfungen, keine Bereitstellung. Keine Datenbankmigrationen hinzugefügt oder geändert.
 
