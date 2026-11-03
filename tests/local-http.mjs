@@ -3,6 +3,7 @@ import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
+import { randomBytes, createHmac } from 'node:crypto';
 const state = await mkdtemp(join(tmpdir(), 'wezel-http-'));
 const windows = process.platform === 'win32';
 let child, output = '', stopped = false;
@@ -33,6 +34,33 @@ try {
   results.push({ function: 'Local operator consent is same-origin; initial invitation is hidden until consent', result: 'passed' });
   const content = await (await get('/api/content')).json(); assert(content.items.every(x => x.id.startsWith('local-')));
   results.push({ function: 'Fresh HTTP environment contains only synthetic fixture content', result: 'passed' });
+  const password = randomBytes(30).toString('base64url'), authCookies = new Map();
+  async function post(path, body) {
+    const form = body instanceof FormData;
+    const r = await get(path, { method: 'POST', headers: { Origin: 'http://localhost:3000', 'x-wezel-request': 'cms', Cookie: [...authCookies].map(([k, v]) => k + '=' + v).join('; '), ...(form ? {} : { 'Content-Type': 'application/json' }) }, body: form ? body : JSON.stringify(body) });
+    for (const value of r.headers.getSetCookie()) { const raw = value.split(';')[0], i = raw.indexOf('='); if (/max-age=0/i.test(value)) authCookies.delete(raw.slice(0, i)); else authCookies.set(raw.slice(0, i), raw.slice(i + 1)); }
+    assert.equal(r.status, 200, path + ': ' + r.status); return r.json();
+  }
+  const authGet = path => get(path, { headers: { Cookie: [...authCookies].map(([k, v]) => k + '=' + v).join('; ') } });
+  const token = /mode=invite#token=([a-f0-9]{64})/.exec(setup)[1];
+  await post('/api/security/accept-invitation', { token, password });
+  await post('/api/auth/sign-in/email', { email: 'admin@wezel.invalid', password });
+  assert.equal((await authGet('/api/admin/overview')).status, 401);
+  const mfa = await post('/api/auth/two-factor/enable', { password }); assert.equal(mfa.backupCodes.length, 10);
+  const secret = new URL(mfa.totpURI).searchParams.get('secret'), alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+  let bits = ''; for (const c of secret.replace(/=+$/, '')) bits += alphabet.indexOf(c).toString(2).padStart(5, '0');
+  const bytes = []; for (let i = 0; i + 8 <= bits.length; i += 8) bytes.push(parseInt(bits.slice(i, i + 8), 2));
+  const time = Buffer.alloc(8); time.writeBigUInt64BE(BigInt(Math.floor(Date.now() / 30000)));
+  const hash = createHmac('sha1', Buffer.from(bytes)).update(time).digest(), offset = hash.at(-1) & 15;
+  await post('/api/auth/two-factor/verify-totp', { code: String((hash.readUInt32BE(offset) & 0x7fffffff) % 1000000).padStart(6, '0'), trustDevice: false });
+  for (const path of ['/admin', '/admin/design', '/admin/calendar/import']) assert.equal((await authGet(path)).status, 200, path);
+  assert(!(await (await get('/__local', { headers: { Cookie: cookie } })).text()).includes('#token='));
+  results.push({ function: 'Real HTTP setup link, password login, mandatory TOTP and authenticated CMS pages work together', result: 'passed' });
+  const form = new FormData(); form.set('privacyReviewed', 'true'); form.set('file', new File(['Titel;Datum\nSynthetischer HTTP-Import;2026-11-21'], 'http-test.csv'));
+  const job = await post('/api/calendar-admin/upload', form);
+  const preview = await post('/api/calendar-admin/preview/' + job.id, { sheet: 0, mapping: { title: 0, date: 1 } }); assert.equal(preview.summary.invalid, 0);
+  await post('/api/auth/sign-out', {}); assert.equal((await authGet('/api/admin/overview')).status, 401);
+  results.push({ function: 'Real HTTP multipart calendar upload, preview and logout preserve boundaries', result: 'passed' });
   console.log(results.length + ' local HTTP/launcher checks passed on ' + process.platform + '.');
 } catch (error) {
   results.push({ function: 'Local HTTP/launcher check', result: 'failed', error: error.message }); console.error(error.stack); process.exitCode = 1;
