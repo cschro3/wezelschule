@@ -49,3 +49,6 @@ yarn-error.log*
 /public/__qa_viewports.html
 
 /tests/*.log
+
+# Isolated local-only database, media and generated credentials
+/.local-test/

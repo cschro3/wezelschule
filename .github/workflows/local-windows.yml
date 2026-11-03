@@ -1,0 +1,30 @@
+name: WEZEL local Windows test
+on:
+  push:
+    branches: [phase6-local-test]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-local:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec tsc --noEmit
+      - run: npm run local:build
+      - run: npm run local:setup
+      - run: npm run local:setup
+      - run: npm run local:test
+      - run: node tests/local-http.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-local-verification
+          path: tests/.generated/phase6/*.json
+          retention-days: 7

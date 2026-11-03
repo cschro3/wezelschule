@@ -46,3 +46,4 @@ Worker-Tests verwenden isolierte D1/R2-Bindings. E-Mail- und externe ICS-Transpo
 - [Bereitstellung und Rollback](docs/DEPLOYMENT-UND-ROLLBACK.md)
 
 Frühere Berichte bleiben historische Nachweise. Bildrechte, Rechtsangaben und Inhalte benötigen weiterhin eine redaktionelle Freigabe. Schulferien und Veranstaltungen werden nicht erfunden.
+
