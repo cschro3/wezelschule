@@ -22,6 +22,20 @@ jobs:
       - run: npm run local:setup
       - run: npm run local:test
       - run: node tests/local-http.mjs
+      - run: node scripts/package-local-test.mjs tests/.generated/phase6/WEZEL-NEXT-LOCAL-TEST.zip
+      - name: Extract self-contained test package into a clean directory
+        shell: pwsh
+        run: Expand-Archive -Path tests/.generated/phase6/WEZEL-NEXT-LOCAL-TEST.zip -DestinationPath "${{ runner.temp }}/wezel-clean"
+      - run: pnpm install --frozen-lockfile
+        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
+      - run: npm run local:build
+        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
+      - run: npm run local:setup
+        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
+      - run: npm run local:test
+        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
+      - run: node tests/local-http.mjs
+        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
       - uses: actions/upload-artifact@v4
         if: always()
         with:

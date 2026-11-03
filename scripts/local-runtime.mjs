@@ -10,8 +10,7 @@ export const sha256 = value => createHash('sha256').update(value).digest('hex');
 
 export async function createLocalRuntime({ stateDirectory = resolve('.local-test'), origin = 'http://localhost:3000', persist = true } = {}) {
   const url = new URL(origin);
-  if (!['localhost', '127.0.0.1', '[::1]', 'terminal.local'].includes(url.hostname) || url.username || url.password) throw new Error('Only loopback/managed preview origins are supported.');
-  if (url.hostname === 'terminal.local' && process.env.SITES_MANAGED_LINUX_CONTAINER !== '1') throw new Error('Managed preview is unavailable.');
+  if (!['localhost', '127.0.0.1', '[::1]'].includes(url.hostname) || url.username || url.password) throw new Error('Only loopback origins are supported.');
   const state = resolve(stateDirectory);
   await mkdir(state, { recursive: true });
   let config;

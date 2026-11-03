@@ -5,9 +5,7 @@ import { createLocalRuntime, OWNER, sha256 } from './local-runtime.mjs';
 const command = process.argv[2] ?? 'start';
 if (!['setup', 'start'].includes(command)) throw new Error('Use setup or start.');
 if (+process.versions.node.split('.')[0] < 24) throw new Error('Node.js 24 or newer is required.');
-const managed = process.argv.includes('--managed-preview');
-if (managed && process.env.SITES_MANAGED_LINUX_CONTAINER !== '1') throw new Error('Managed preview flag is reserved for the Sites preview daemon.');
-const port = managed ? 5173 : 3000, origin = managed ? 'http://terminal.local:5173' : 'http://localhost:3000';
+const port = 3000, origin = 'http://localhost:3000';
 const runtime = await createLocalRuntime({ origin, stateDirectory: process.env.WEZEL_LOCAL_TEST_DIRECTORY || resolve('.local-test') });
 if (command === 'setup') {
   console.log('Local synthetic D1/R2 initialized; existing local data retained. No hosted resources were contacted.');
@@ -29,7 +27,7 @@ if (command === 'setup') {
   const html = body => '<!doctype html><html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WEZEL NEXT – Lokaler Test</title><style>body{background:#101d35;color:#f7f9fc;font:17px/1.6 system-ui;margin:0;padding:clamp(24px,6vw,80px)}main{max-width:850px;margin:auto}a{color:#c7f36b}button{background:#c7f36b;border:0;padding:16px 22px;border-radius:8px;font:inherit;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#18243a;padding:20px}li{margin:12px 0}</style><main><h1>WEZEL NEXT · Lokaler Test</h1><p>Nur synthetische Daten. Eigene lokale D1-/R2-Dateien. Kein externer Mailversand.</p>' + body + '</main></html>';
   const server = createServer(async (req, res) => {
     try {
-      const allowed = new Set(managed ? ['terminal.local:5173', 'localhost:5173', '127.0.0.1:5173'] : ['localhost:3000', '127.0.0.1:3000', '[::1]:3000']);
+      const allowed = new Set(['localhost:3000', '127.0.0.1:3000', '[::1]:3000']);
       if (!allowed.has(req.headers.host)) { res.writeHead(403); return res.end('Unsupported host.'); }
       const url = new URL(req.url, origin);
       if (url.origin !== origin && !allowed.has(url.host)) { res.writeHead(403); return res.end('Unsupported target.'); }
@@ -62,7 +60,7 @@ if (command === 'setup') {
     } catch (error) { console.error('Local request failed:', error.name); if (!res.headersSent) res.writeHead(500); res.end('Lokaler Test: Anfrage fehlgeschlagen.'); }
   });
   server.requestTimeout = 30000;
-  server.listen(port, managed ? '0.0.0.0' : '127.0.0.1', () => console.log('Local test ready: ' + origin + '/__local'));
+  server.listen(port, '127.0.0.1', () => console.log('Local test ready: ' + origin + '/__local'));
   server.on('error', async error => { console.error(error.code === 'EADDRINUSE' ? 'Port already in use. Stop the other local test first.' : 'Local listener failed.'); await runtime.dispose(); process.exitCode = 1; });
   async function stop() { server.close(); await runtime.dispose(); process.exit(); }
   process.once('SIGINT', stop); process.once('SIGTERM', stop);

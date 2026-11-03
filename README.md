@@ -2,6 +2,12 @@
 
 Bestehende Schulplattform der Staatlichen Regelschule „Johann Karl Wezel“ Östertal. React/TypeScript und Vinext auf Cloudflare Workers, Drizzle/D1 und R2.
 
+## Isolierter lokaler Testbetrieb (Phase 6)
+
+Windows: [Installationsanleitung](INSTALLATION-WINDOWS-TEST.md). `START-WEZEL-TEST.cmd` baut und startet die bestehende Anwendung auf http://localhost:3000 mit ausschließlich synthetischen Daten, eigenem lokalen D1/R2 und lokalem Mailpostausgang. Kein Cloudflare-/Sites-Zugang oder produktives Geheimnis nötig. Der einmalige Einrichtungsweg beginnt auf http://localhost:3000/__local.
+
+[Betreiberanfrage, noch nicht versandt](docs/SITES-BETREIBERANFRAGE.md) · [Prüfbericht](docs/PHASE6-LOKALER-TESTBERICHT.md). Der lokale Starter veröffentlicht nichts. Ein bereinigtes Testpaket lässt sich mit `node scripts/package-local-test.mjs` erzeugen; es enthält keine veröffentlichten Datenexporte und keine gehostete Projekt-ID. Die gehostete Sites-Testbereitstellung bleibt bis zum belastbaren Speichernachweis blockiert.
+
 ## Stand
 
 Phase 3 (gespeicherte Version 8, Quellbasis a904cacc5a8151731d09b973b0c3400ddc54fd43) bleibt der sichere Ausgangspunkt. Phase 4 ergänzt die vorhandene Veranstaltungsverwaltung. Die gemeinsame Folgeversion wird ohne Deployment gespeichert. Die aktive private Website, Datenbank, Benutzer und Domain bleiben unverändert. Eine Bereitstellung benötigt die ausdrückliche Freigabe des Eigentümers.
