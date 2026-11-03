@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-03T09:21:10.622168+00:00",
+  "scope": "local SQLite and filesystem objects; not a production D1/R2 restore",
+  "result": "passed",
+  "baselineTables": 9,
+  "existingUsersPreserved": 1,
+  "existingEntriesPreserved": 4,
+  "existingEventEntriesPreserved": 2,
+  "existingSettingsAndDesignRevisionsPreserved": true,
+  "mediaObjectsRestored": 2,
+  "oldColumnValuesUnchanged": true,
+  "migrationOrder": [
+    "0002_security_login.sql",
+    "0003_worried_invisible_woman.sql"
+  ],
+  "integrityCheck": "ok",
+  "foreignKeyViolations": 0,
+  "backupRestoreDigestMatch": true,
+  "productionConnected": false
+}

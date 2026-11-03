@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-11-03T08:52:17.285987+00:00",
+  "baselineVersion": 8,
+  "baselineCommit": "a904cacc5a8151731d09b973b0c3400ddc54fd43",
+  "automatedChecks": {
+    "unit": 31,
+    "security": 23,
+    "calendar": 22,
+    "cms": 23,
+    "render": 29,
+    "persistence": 2
+  },
+  "total": 130,
+  "typecheck": "passed",
+  "build": "passed",
+  "productionDependencyAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0
+  },
+  "browserMobileQA": "blocked: managed preview URL http://terminal.local:4173 returned ERR_CONNECTION_REFUSED; no viewport tests claimed",
+  "deployed": false,
+  "liveMigrationApplied": false,
+  "runtime": "compiled Worker, isolated D1/R2, controlled email and ICS HTTP test transports"
+}

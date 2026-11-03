@@ -45,7 +45,7 @@ export async function initialize(user:User){
   db.insert(audit).values({id:id(),actorId:user.id,action:'source.initialize',target:'verified-source-inventory',createdAt:t})
  ]);
 }
-export async function publicEntries(kind?:string){const all=await getDb().select().from(entries).orderBy(desc(entries.updatedAt));return all.filter(e=>(!kind||e.kind===kind)&&isVisible(e)).map(({draft,draftStatus,authorId,...entry})=>({...entry,authorId:null}));}
+export async function publicEntries(kind?:string){const all=await getDb().select().from(entries).orderBy(desc(entries.updatedAt));return all.filter(e=>(!kind||e.kind===kind)&&isVisible(e)&&(e.kind!=='event'||e.visibility!=='internal')).map(({draft,draftStatus,authorId,...entry})=>({...entry,authorId:null}));}
 export async function rateLimit(userId:string){
  const db=getDb(),w=Math.floor(Date.now()/60000),key=userId+'-'+w;
  const row=await db.insert(limits).values({key,count:1,window:w}).onConflictDoUpdate({target:limits.key,set:{count:sql`${limits.count}+1`}}).returning().get();

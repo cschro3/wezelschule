@@ -13,9 +13,13 @@ jobs:
       - run: npm install --global pnpm@11.25.0
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec tsc --noEmit
-      - run: node --test tests/policy.test.mjs tests/design-model.test.mjs
+      - run: node --test tests/policy.test.mjs tests/design-model.test.mjs tests/branding-render.test.mjs tests/calendar.test.mjs
       - run: pnpm run build
       - run: node tests/render-pages.mjs
       - run: node tests/integration.mjs
+      - run: node tests/security-integration.mjs
+      - run: node tests/calendar-integration.mjs
+      - run: node tests/calendar-persistence.mjs write
+      - run: node tests/calendar-persistence.mjs read
       - run: node tests/persistence.mjs write
       - run: node tests/persistence.mjs read

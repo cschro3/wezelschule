@@ -1,53 +1,48 @@
 # WEZEL NEXT
 
-Originalquellcode der digitalen Schulplattform der Staatlichen Regelschule „Johann Karl Wezel“ Östertal. Importiert aus dem bestehenden Projekt, einschließlich CMS, Website-Designer und der vorbereiteten Phase 3 für Login und Sicherheit.
+Bestehende Schulplattform der Staatlichen Regelschule „Johann Karl Wezel“ Östertal. React/TypeScript und Vinext auf Cloudflare Workers, Drizzle/D1 und R2.
 
-## Aktueller Stand
+## Stand
 
-Quellbasis: `a904cacc5a8151731d09b973b0c3400ddc54fd43` · 03.11.2026 · gespeicherte Sites-Version 8. Phase 3 ist vorbereitet und lokal geprüft, aber noch nicht auf der laufenden Website veröffentlicht oder aktiviert. Die GitHub-Übertragung verändert die bestehende Website nicht.
+Phase 3 (gespeicherte Version 8, Quellbasis a904cacc5a8151731d09b973b0c3400ddc54fd43) bleibt der sichere Ausgangspunkt. Phase 4 ergänzt die vorhandene Veranstaltungsverwaltung. Die gemeinsame Folgeversion wird ohne Deployment gespeichert. Die aktive private Website, Datenbank, Benutzer und Domain bleiben unverändert. Eine Bereitstellung benötigt die ausdrückliche Freigabe des Eigentümers.
 
-## Enthalten
+## Funktionen
 
-- Öffentliche Seiten, responsive Navigation, Header/Footer, Nachrichten, Projekte, Termine und Downloads.
-- Adminbereich, Mediathek, Seitenverwaltung, Freigaben, Versionierung und visueller Website-Designer.
-- Worker/APIs, Rollenprüfung, Better Auth, Argon2id, Sitzungen, TOTP, Einladungen und Passwort-Reset.
-- Drizzle/D1-Schema und drei additive Migrationen, Tests, GitHub-CI, Lockdatei, Designsystem und lokale Schriftarten.
-- Snapshot des veröffentlichten Inhalts-/Designstands und übertragbare Logos; Ausnahmen siehe Transferbericht und Medienmanifest.
+CMS, Mediathek, Website-Designer, zentrale Logo-Konfiguration, Entwürfe, Freigaben und Versionierung. Phase 3 enthält Better Auth, Argon2id, TOTP-MFA, sichere Sitzungen, Einladungen und Passwort-Reset. Der Plattformzugang bleibt bis zur geprüften und ausdrücklich aktivierten Administratorübernahme erhalten.
 
-## Lokaler Einstieg
+Kalender: /admin/calendar · Import: /admin/calendar/import · Öffentlich: /termine · ICS: /api/calendar. XLSX, CSV und ICS werden mit Zuordnung, Vorschau, Auswahl und Duplikaterkennung verarbeitet. Neue Termine beginnen als Entwurf oder zur Freigabe. Interne Termine werden nie öffentlich ausgegeben. Öffentliche ICS-Quellen können bewusst aktiviert und manuell als Vorschau abgerufen werden. Keine automatische Synchronisierung oder Veröffentlichung.
 
-Node.js 24 und pnpm 11.25.0 verwenden:
+## Entwicklung und Prüfungen
 
-```powershell
-git clone https://github.com/cschro3/wezelschule.git
-cd wezelschule
-npm install --global pnpm@11.25.0
+Node.js 24, pnpm 11.25.0:
+
+```sh
 pnpm install --frozen-lockfile
 pnpm exec tsc --noEmit
 pnpm run build
-Get-ChildItem drizzle/*.sql | Sort-Object Name | ForEach-Object {
-  pnpm exec wrangler d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file $_.FullName
-}
-pnpm run dev
+node --test tests/policy.test.mjs tests/design-model.test.mjs tests/branding-render.test.mjs tests/calendar.test.mjs
+node tests/security-integration.mjs
+node tests/calendar-integration.mjs
+node tests/integration.mjs
+node tests/render-pages.mjs
+node tests/calendar-persistence.mjs write
+node tests/calendar-persistence.mjs read
 ```
 
-Der portable Entwicklungsmodus verwendet standardmäßig `http://localhost:5173`; Admin: `http://localhost:5173/admin`. Eine leere lokale Datenbank enthält noch keine echten Benutzer oder gehosteten Uploads. Der Loopback-Entwicklungsmodus bietet ausschließlich lokal eine simulierte Plattformanmeldung an; sie ist kein Produktionslogin. Für den lokalen CMS-Erstzugang muss `OWNER_EMAIL` in einer unversionierten `.dev.vars` zur ausdrücklich lokalen Testidentität `seedy@sites.test` passen. Diese Testkonfiguration niemals in eine gehostete Umgebung übernehmen. `.env.example` dokumentiert die weiteren Laufzeitwerte; keine realen Geheimnisse committen.
+Der portable Entwicklungsmodus startet mit pnpm run dev auf Port 5173. Lokale Migrationen in Dateireihenfolge mit wrangler d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/DATEI.sql anwenden. Testfixtures und lokale Anmeldesimulation niemals in eine gehostete Datenbank übernehmen. Echte Benutzer und Uploads liegen in D1/R2, nicht automatisch in Git.
 
-Die gezeigten Befehle stammen aus den vorhandenen Projektwerkzeugen; ein tatsächlicher Windows-Browserlauf wird nicht behauptet. Für Datenübernahme, lokale Seeds und Rollout die Dokumentation lesen. Der vorhandene veröffentlichte Snapshot wird bewusst nicht automatisch in eine laufende Datenbank importiert.
+Ein unabhängiger öffentlicher Betrieb erfordert korrekte D1/R2-Bindings, sichere Auth-Konfiguration und die geprüfte Administratorübernahme. Außerhalb des vertrauenswürdigen Sites-Proxys niemals fremde Identitätsheader akzeptieren. Keine Prisma-/PostgreSQL-/Railway-Portierung. Geheimnisse separat konfigurieren; .env.example enthält keine realen Zugangsdaten.
 
-## Architektur und Betriebsgrenzen
-
-Vinext/React auf Cloudflare Workers mit D1 und R2. Dies ist der tatsächliche Full-Stack-Quellstand, keine Node-/PostgreSQL-Neuimplementierung. Der Entwicklungsserver ist für lokale Arbeit vorgesehen. Ein unabhängiger Produktivbetrieb erfordert D1-/R2-Bindings, sichere Auth-Konfiguration und einen getesteten Administratorzugang. Die bisherige Plattformidentität darf außerhalb des vertrauenswürdigen Sites-Proxys nicht ungeprüft akzeptiert werden.
-
-Das öffentliche Repository enthält keine produktiven Benutzer, Secrets, Sessions oder unveröffentlichten Inhalte. Zwei historische Fotos mit ungeklärten Weitergaberechten und weitere zurückgestellte R2-Bilder fehlen bewusst; vorhandene Verweise sind dokumentiert. Öffentliche Repository-Sichtbarkeit ersetzt keine Rechtefreigabe für Schulmedien.
+Worker-Tests verwenden isolierte D1/R2-Bindings. E-Mail- und externe ICS-Transporttests verwenden kontrollierte Testantworten. Persönliche Administratorübernahme, echte Mailzustellung und visuelle Mobile-Abnahme sind davon getrennt. GitHub Actions prüft den Code und deployt keine Website.
 
 ## Dokumentation
 
-- [Übertragung, Umfang und Ausnahmen](docs/GITHUB-TRANSFER.md)
-- [Datei- und Medienmanifest](exports/manifest.json)
-- [Phase-3-Prüfbericht mit offenen Punkten](docs/PHASE3-PRUEFBERICHT.md)
+- [Abschließender Freigabebericht und Ablaufplan](docs/FINAL-RELEASE-READINESS.md)
+
+- [Gemeinsamer Prüfbericht Phase 3 und 4](docs/PHASE4-PRUEFBERICHT.md)
+- [Kalender-Handbuch und Formatgrenzen](docs/KALENDER-HANDBUCH.md)
 - [Sicherer Login-Rollout und Wiederherstellung](docs/SECURITY-ROLLOUT.md)
 - [Admin-Handbuch](docs/ADMIN-HANDBUCH.md)
 - [Bereitstellung und Rollback](docs/DEPLOYMENT-UND-ROLLBACK.md)
 
-Frühere Berichte bleiben als historische Nachweise erhalten; für den aktuellen Sicherheitsstand gelten der Phase-3-Bericht und `SECURITY-ROLLOUT.md`. Der GitHub-Workflow prüft den Code und veröffentlicht keine Website.
+Frühere Berichte bleiben historische Nachweise. Bildrechte, Rechtsangaben und Inhalte benötigen weiterhin eine redaktionelle Freigabe. Schulferien und Veranstaltungen werden nicht erfunden.

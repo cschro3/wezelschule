@@ -1,0 +1,253 @@
+{
+  "scope": "Original React components with read-only synthetic GET fixtures in Chrome frames; no authenticated browser E2E or Safari/device claim",
+  "results": [
+    {
+      "module": "login",
+      "viewport": "1280,900",
+      "heading": "Gemeinsam Schule gestalten.",
+      "images": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "module": "login",
+      "viewport": "390,844",
+      "heading": "Gemeinsam Schule gestalten.",
+      "images": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "module": "login",
+      "viewport": "768,1024",
+      "heading": "Gemeinsam Schule gestalten.",
+      "images": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "module": "admin",
+      "viewport": "1280,900",
+      "heading": "Schön, dass du da bist.",
+      "images": [
+        {
+          "height": 91,
+          "loaded": true,
+          "width": 182
+        }
+      ],
+      "scrollWidth": 1265,
+      "width": 1265
+    },
+    {
+      "module": "admin",
+      "viewport": "390,844",
+      "heading": "Schön, dass du da bist.",
+      "images": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "module": "admin",
+      "viewport": "768,1024",
+      "heading": "Schön, dass du da bist.",
+      "images": [
+        {
+          "height": 74,
+          "loaded": true,
+          "width": 148
+        }
+      ],
+      "scrollWidth": 753,
+      "width": 753
+    },
+    {
+      "module": "designer",
+      "viewport": "1280,900",
+      "heading": "Branding & Logo.",
+      "images": [
+        {
+          "height": 82,
+          "loaded": true,
+          "width": 164
+        },
+        {
+          "height": 48,
+          "loaded": true,
+          "width": 48
+        },
+        {
+          "height": 48,
+          "loaded": true,
+          "width": 48
+        }
+      ],
+      "scrollWidth": 1265,
+      "width": 1265
+    },
+    {
+      "module": "designer",
+      "viewport": "390,844",
+      "heading": "Branding & Logo.",
+      "images": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 48,
+          "loaded": true,
+          "width": 48
+        },
+        {
+          "height": 48,
+          "loaded": true,
+          "width": 48
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "module": "designer",
+      "viewport": "768,1024",
+      "heading": "Branding & Logo.",
+      "images": [
+        {
+          "height": 89,
+          "loaded": true,
+          "width": 178
+        },
+        {
+          "height": 48,
+          "loaded": true,
+          "width": 48
+        },
+        {
+          "height": 48,
+          "loaded": true,
+          "width": 48
+        }
+      ],
+      "scrollWidth": 753,
+      "width": 753
+    },
+    {
+      "module": "calendar",
+      "viewport": "1280,900",
+      "heading": "Gut organisiert.",
+      "images": [
+        {
+          "height": 91,
+          "loaded": true,
+          "width": 182
+        }
+      ],
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "module": "calendar",
+      "viewport": "390,844",
+      "heading": "Gut organisiert.",
+      "images": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        }
+      ],
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "module": "calendar",
+      "viewport": "768,1024",
+      "heading": "Gut organisiert.",
+      "images": [
+        {
+          "height": 74,
+          "loaded": true,
+          "width": 148
+        }
+      ],
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "module": "import",
+      "viewport": "1280,900",
+      "heading": "Termine importieren.",
+      "images": [
+        {
+          "height": 91,
+          "loaded": true,
+          "width": 182
+        }
+      ],
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "module": "import",
+      "viewport": "390,844",
+      "heading": "Termine importieren.",
+      "images": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "module": "import",
+      "viewport": "768,1024",
+      "heading": "Termine importieren.",
+      "images": [
+        {
+          "height": 74,
+          "loaded": true,
+          "width": 148
+        }
+      ],
+      "scrollWidth": 768,
+      "width": 768
+    }
+  ],
+  "interactions": {
+    "emptyPasswordVisibilityToggle": true,
+    "forgotPasswordForm": true,
+    "mobileAdminDrawer": true,
+    "mobileDesignerDrawer": true,
+    "importFormatSelector": ".xlsx,.csv,.ics",
+    "importDisabledWithoutFileAndPrivacyConfirmation": true
+  }
+}
