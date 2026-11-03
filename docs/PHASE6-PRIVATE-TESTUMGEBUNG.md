@@ -1,6 +1,6 @@
 # WEZEL NEXT – Phase 6: Private Testumgebung
 
-Stand: 03.11.2026. **Status: eine private, unveröffentlichte Testinstanz angelegt; vor Migration und Deployment an der vorgeschriebenen Speicher-ID-Prüfung gestoppt. Keine funktionsfähige Test-URL bereitgestellt.**
+Stand: 03.11.2026. **Status: bestehende private Testinstanz erneut geprüft; auch der alternative Isolationsnachweis ist mit den verfügbaren Plattforminformationen nicht ausreichend belegt. Vor Migration und Deployment gestoppt. Keine funktionsfähige Test-URL bereitgestellt.**
 
 ## Gesicherter Projektstand
 
@@ -21,7 +21,44 @@ Stand: 03.11.2026. **Status: eine private, unveröffentlichte Testinstanz angele
 
 Die neue ID wurde unmittelbar in einer separaten lokalen `.openai/hosting.json` gespeichert. Die Original-ID wurde dort nicht übernommen. Bei einer Fortsetzung ist **dieselbe neue Instanz wiederzuverwenden**; keine zweite Testkopie erstellen.
 
-## Technischer Blocker
+## Aktuelle alternative Isolationsprüfung
+
+Die zuletzt erteilte eingeschränkte Freigabe ersetzt die Vorabprüfung physischer Speicher-IDs durch einen gleichwertigen, unterstützten Nachweis. **Fehlende physische IDs allein sind damit nicht mehr der Sperrgrund.** Verbindlich bleiben eigene Testressourcen, fehlender Schreibzugriff auf die Originalressourcen und ein Nachweis vor jeder Migration bzw. Bereitstellung.
+
+| Nachweis | Tatsächliches Ergebnis | Bewertung |
+|---|---|---|
+| Richtiges bereits angelegtes Testprojekt | `appgprj_6ae9c14e16008191b530e52d6d4afac8`, Version 0, keine Live-URL | Bestätigt |
+| Private Zugriffspolitik | `custom`, Revision 1, Eigentümerrolle, eine erlaubte Person, keine Gruppen; gleiches berechtigtes Eigentümerkonto | Bestätigt |
+| Quellzweig | `phase5-testbetrieb` unverändert bei `c68517161c6c5b6142087707c74eadc73abb41a7` | Bestätigt |
+| Neue Site bzw. erweiterter Zugriff | Keine weitere Site und keine Zugriffsänderung | Bestätigt |
+| Lesende Datenbankauskunft der Testinstanz | Keine gemeldete D1-Bindung und keine Tabellen | Belegt keine bereits zugewiesene eigene D1 |
+| Automatische Provisionierung durch Sites | Der unterstützte Ablauf verwaltet Storage-Bindings und Ressourcenbereitstellung | Allgemeine Funktionsbeschreibung, kein ausreichender Nachweis projektübergreifender Schreibsperren |
+| Verbindliche Betreiberzusicherung der D1-/R2-Trennung | In den tatsächlich geprüften Unterlagen und Werkzeugantworten nicht gefunden | Nicht bestätigt |
+| Technischer Nachweis der Storage-Zuordnung und Rechtebegrenzung | Keine entsprechende prüfbare Antwort oder Vorab-Prüffunktion in der verfügbaren Schnittstelle | Nicht bestätigt |
+| Gesamtentscheidung | Kein gleichwertiger positiver Isolationsnachweis | Vor Migration und Deployment stoppen |
+
+### Zusätzlich geprüfte unterstützte Informationen
+
+Neben den nativen Projekt-, Zugriffs- und Datenbankantworten wurden die installierte Plattformdokumentation und folgende offizielle Betreiberquellen geprüft:
+
+- [Creating and using ChatGPT Sites](https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites): beschreibt private Sites, Speichergrenzen und den Umstand, dass eine Veröffentlichung die Datenbank bereits vor dem Livegang verändern kann.
+- [Manage a site](https://learn.chatgpt.com/docs/sites/managing-a-site): beschreibt die Zuordnung des Quellprojekts zum Hosting und logische Storage-Bindings im Manifest.
+- [Data and connections](https://learn.chatgpt.com/docs/sites/data-and-connections): beschreibt D1 für Datensätze und R2 für Dateien.
+- [Managing ChatGPT Sites for your workspace](https://help.openai.com/en/articles/20001338-managing-chatgpt-sites-for-your-workspace): beschreibt Zugriffs-, Freigabe- und Workspacekontrollen.
+
+Diese geprüften Aussagen liefern für sich keinen belastbaren Nachweis, dass die konkrete Testinstanz eigene Ressourcen erhält und keinen Schreibzugriff auf die Originalspeicher besitzt. Das ist eine **Grenze der hier verfügbaren Nachweise**, keine Feststellung einer tatsächlich vorhandenen Datenvermischung und keine Behauptung, dass Sites grundsätzlich keine Isolation unterstützt.
+
+Unterschiedliche Projekt-IDs, gleiche bzw. unterschiedliche logische Bindingnamen, private Besucherrechte oder ein späterer Vergleich des Datenbestands werden ausdrücklich nicht als Ersatz ausgegeben. Ein Testdeployment oder Testschreibvorgang zur nachträglichen Prüfung wurde ebenfalls nicht ausgeführt, weil der Nachweis davor verlangt ist.
+
+Die vorherige Aussage, eine weitere allgemeine Zustimmung würde die Fortsetzung ermöglichen, war zu weitgehend. Die Zustimmung liegt vor; der belastbare technische bzw. betreiberseitige Nachweis fehlt weiterhin.
+
+### Konkrete Anfrage an den Sites-Betreiber
+
+Bitte über einen unterstützten Weg bestätigen oder nachweisen, dass für das Testprojekt `appgprj_6ae9c14e16008191b530e52d6d4afac8` eigenständige D1-/R2-Ressourcen provisioniert werden und weder dessen Migrationen noch dessen Worker auf die Speicher des Originalprojekts `appgprj_6ae8542b54bc8191b9a0048a8cc1c149` schreiben können. Benötigt werden entweder eine verbindliche Dokumentation dieser projektbezogenen Berechtigungsgrenze oder eine überprüfbare Ressourcen-/Rechtezuordnung vor der ersten Migration. Physische IDs sind bei gleichwertigem anderem Nachweis nicht zwingend.
+
+Diese Anfrage ist nur vorbereitet. Es wurde keine Supportnachricht versandt.
+
+## Ursprüngliche Vorab-ID-Prüfung – historischer Stand
 
 Private Sites-Projekte werden unterstützt. Die hier verlangte **Vorabprüfung anhand tatsächlicher physischer Speicherkennungen** lässt sich mit der verfügbaren Verbindung jedoch nicht abschließen:
 
@@ -67,8 +104,8 @@ Bis dahin wurden weder Konten noch Auth-Geheimnisse angelegt. Es wurde keine ech
 
 ## Voraussetzung für die Fortsetzung
 
-Benötigt wird ein **unterstützter Sites-Betreiberweg**, der vor der ersten Migration die eigene Test-D1 und Test-R2 provisioniert und deren tatsächliche Kennungen sowie die Zuordnung zum neuen Projekt ausweist. Anschließend müssen sie mit der Ressourcenzuordnung des Originals abgeglichen werden. Die bestehende Benutzerfreigabe reicht für die beauftragte private Testkopie aus; es fehlt die technische Ressourcenprüfung, keine weitere allgemeine Zustimmung.
+Benötigt wird ein unterstützter, belastbarer Betreiber- oder technischer Nachweis eigener Testressourcen und fehlender Schreibberechtigung auf die Originalspeicher. Eine entsprechende Ressourcen-/Rechtezuordnung oder verbindliche Plattformzusicherung kann die früher geforderten physischen IDs ersetzen. Eine weitere allgemeine Benutzerfreigabe ist dafür weder erforderlich noch ausreichend.
 
-Danach: dieselbe Testprojekt-ID verwenden, die neuen Ressourcen kontrollieren, nur synthetische Daten initialisieren, owner-private bereitstellen und erst dann die verlangten vollständigen Browserabläufe dokumentieren. Ohne diesen Nachweis bleibt die Bereitstellung gesperrt. Die offizielle Schulwebsite und das ursprüngliche Sites-Projekt sind kein Ausweichziel.
+Erst nach positivem Nachweis: dieselbe bestehende Testprojekt-ID verwenden, ausschließlich neue synthetische Testdaten und Konten anlegen, owner-private bereitstellen und die vollständigen Browserabläufe durchführen. Bis dahin bleiben Migration und Deployment gesperrt. Originalprojekt, Version 9, Zugriffspolitik, offizielle Schulwebsite und PR #1 wurden durch diese alternative Prüfung nicht verändert.
 
 [Maschinenlesbarer Nachweis](verification/phase6/isolation-check.json)

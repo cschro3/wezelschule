@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-03T11:16:56.684Z",
+  "checkedAt": "2026-11-03T11:46:30.088Z",
   "source": {
     "repository": "cschro3/wezelschule",
     "branch": "phase5-testbetrieb",
@@ -62,8 +62,15 @@
     "paidExternalResourcesCreated": 0
   },
   "gate": {
+    "method": "alternative_supported_platform_evidence",
+    "physicalIdsMandatory": false,
     "result": "blocked_before_deployment",
-    "reason": "Native Sites responses expose logical bindings only. New project reports no D1 binding. Physical D1 UUID and R2 bucket/account identifiers cannot be inspected or independently provisioned through the available tool surface before deployment. Supported deployment applies pending migrations before Worker upload; requested resource-ID check therefore cannot be completed first.",
+    "differentProjectIdsSufficient": false,
+    "logicalBindingsSufficient": false,
+    "automaticProvisioningAloneSufficient": false,
+    "operatorIsolationAssuranceFound": false,
+    "concreteStoragePermissionAssignmentVerified": false,
+    "reason": "Available supported information confirms project selection, owner-only visitor access and general D1/R2 provisioning, but does not sufficiently establish dedicated storage resources and absence of cross-project write permissions for the specified test instance. No migration or deployment was used as a probe.",
     "doNotCreateAnotherSite": true
   },
   "browserTests": {
@@ -75,5 +82,64 @@
     "workflow": "not_run_no_deployment",
     "responsive": "not_run_no_deployment",
     "rscWarning": "not_verified_for_new_instance"
+  },
+  "history": [
+    {
+      "checkedAt": "2026-11-03T11:16:56.684Z",
+      "gate": {
+        "result": "blocked_before_deployment",
+        "reason": "Native Sites responses expose logical bindings only. New project reports no D1 binding. Physical D1 UUID and R2 bucket/account identifiers cannot be inspected or independently provisioned through the available tool surface before deployment. Supported deployment applies pending migrations before Worker upload; requested resource-ID check therefore cannot be completed first.",
+        "doNotCreateAnotherSite": true
+      }
+    }
+  ],
+  "alternativeEvidence": {
+    "officialSources": [
+      "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites",
+      "https://learn.chatgpt.com/docs/sites/managing-a-site",
+      "https://learn.chatgpt.com/docs/sites/data-and-connections",
+      "https://help.openai.com/en/articles/20001338-managing-chatgpt-sites-for-your-workspace"
+    ],
+    "newD1Overview": {
+      "project_id": "appgprj_6ae9c14e16008191b530e52d6d4afac8",
+      "bindings": [],
+      "selected_binding_name": null,
+      "tables": [],
+      "model_projection": {
+        "truncated": false,
+        "omitted_project_id": false,
+        "omitted_selected_binding": false,
+        "omitted_bindings": 0,
+        "omitted_tables": 0
+      }
+    },
+    "originalD1Overview": {
+      "project_id": "appgprj_6ae8542b54bc8191b9a0048a8cc1c149",
+      "bindings": [
+        "DB"
+      ],
+      "selected_binding_name": "DB",
+      "tables": [
+        "audit",
+        "design_drafts",
+        "design_history",
+        "entries",
+        "media",
+        "rate_limits",
+        "revisions",
+        "settings",
+        "users"
+      ],
+      "model_projection": {
+        "truncated": false,
+        "omitted_project_id": false,
+        "omitted_selected_binding": false,
+        "omitted_bindings": 0,
+        "omitted_tables": 0
+      }
+    },
+    "guaranteeNotFoundInCheckedSources": true,
+    "contactedSupport": false,
+    "crossProjectStorageAccessTest": "not_executed_no_deployment"
   }
 }
