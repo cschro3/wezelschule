@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-11-03T10:26:49.024Z",
+  "source": "cae689e03b31b1c866243b4d1e3c590ff0526135",
+  "results": [
+    {
+      "name": "render",
+      "exitCode": 0,
+      "seconds": 5.9,
+      "passed": true
+    },
+    {
+      "name": "cms",
+      "exitCode": 0,
+      "seconds": 14.8,
+      "passed": true
+    },
+    {
+      "name": "designer",
+      "exitCode": 0,
+      "seconds": 12.7,
+      "passed": true
+    },
+    {
+      "name": "security",
+      "exitCode": 0,
+      "seconds": 7.4,
+      "passed": true
+    },
+    {
+      "name": "calendar",
+      "exitCode": 0,
+      "seconds": 5.6,
+      "passed": true
+    },
+    {
+      "name": "calendar-persist-write",
+      "exitCode": 0,
+      "seconds": 4.4,
+      "passed": true
+    },
+    {
+      "name": "calendar-persist-read",
+      "exitCode": 0,
+      "seconds": 4.4,
+      "passed": true
+    },
+    {
+      "name": "cms-persist-write",
+      "exitCode": 0,
+      "seconds": 5,
+      "passed": true
+    },
+    {
+      "name": "cms-persist-read",
+      "exitCode": 0,
+      "seconds": 7.2,
+      "passed": true
+    }
+  ]
+}

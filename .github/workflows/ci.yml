@@ -19,6 +19,7 @@ jobs:
       - run: node tests/integration.mjs
       - run: node tests/security-integration.mjs
       - run: node tests/calendar-integration.mjs
+      - run: node tests/phase5-testbetrieb.mjs
       - run: node tests/calendar-persistence.mjs write
       - run: node tests/calendar-persistence.mjs read
       - run: node tests/persistence.mjs write

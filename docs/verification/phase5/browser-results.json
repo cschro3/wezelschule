@@ -1,0 +1,1244 @@
+{
+  "scope": "actual original local routes with a read-only copy of current published content/branding; isolated D1/R2; synthetic calendar; Chrome responsive frames, not physical Safari; no authenticated browser credential entry",
+  "measurements": [
+    {
+      "path": "/",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "DEINE ZUKUNFT.UNSERE SCHULE.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "DEINE ZUKUNFT.UNSERE SCHULE.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "DEINE ZUKUNFT.UNSERE SCHULE.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/unsere-schule",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Eine Schule. Viele Möglichkeiten.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/unsere-schule",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Eine Schule. Viele Möglichkeiten.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/unsere-schule",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Eine Schule. Viele Möglichkeiten.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/leitbild",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Gemeinsam lernen. Verantwortung übernehmen.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/leitbild",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Gemeinsam lernen. Verantwortung übernehmen.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/leitbild",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Gemeinsam lernen. Verantwortung übernehmen.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/lernen",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Lernen, das weiterführt.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/lernen",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Lernen, das weiterführt.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/lernen",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Lernen, das weiterführt.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/digitales-lernen",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Neugier trifft Möglichkeiten.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/digitales-lernen",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Neugier trifft Möglichkeiten.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/digitales-lernen",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Neugier trifft Möglichkeiten.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/individuelle-foerderung",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Jeder Lernweg zählt.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/individuelle-foerderung",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Jeder Lernweg zählt.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/individuelle-foerderung",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Jeder Lernweg zählt.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/berufsorientierung",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Der nächste Schritt beginnt hier.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/berufsorientierung",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Der nächste Schritt beginnt hier.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/berufsorientierung",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Der nächste Schritt beginnt hier.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/schulsozialarbeit",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Ein offenes Ohr.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/schulsozialarbeit",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Ein offenes Ohr.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/schulsozialarbeit",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Ein offenes Ohr.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/schulgebaeude",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Hier beginnt dein Weg.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/schulgebaeude",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Hier beginnt dein Weg.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/schulgebaeude",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Hier beginnt dein Weg.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/aktuelles",
+      "frameWidth": 1280,
+      "warning": false,
+      "h1": "Was uns bewegt.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/aktuelles",
+      "frameWidth": 390,
+      "warning": true,
+      "h1": "Was uns bewegt.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/aktuelles",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Was uns bewegt.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/projekte",
+      "frameWidth": 1280,
+      "warning": false,
+      "h1": "Ideen werden Wirklichkeit.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/projekte",
+      "frameWidth": 390,
+      "warning": true,
+      "h1": "Ideen werden Wirklichkeit.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/projekte",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Ideen werden Wirklichkeit.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/downloads",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Schneller gefunden.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/downloads",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Schneller gefunden.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/downloads",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Schneller gefunden.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/kontakt",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Lass uns sprechen.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/kontakt",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Lass uns sprechen.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/kontakt",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Lass uns sprechen.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/service",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Dein direkter Draht.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/service",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Dein direkter Draht.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/service",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Dein direkter Draht.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/termine",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Alles im Blick.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/termine",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Alles im Blick.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/termine",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Alles im Blick.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/vertretungsplan",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Dein Plan für heute.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/vertretungsplan",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Dein Plan für heute.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/vertretungsplan",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Dein Plan für heute.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/impressum",
+      "frameWidth": 1280,
+      "warning": false,
+      "h1": "Impressum.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/impressum",
+      "frameWidth": 390,
+      "warning": true,
+      "h1": "Impressum.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/impressum",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Impressum.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/datenschutz",
+      "frameWidth": 1280,
+      "warning": false,
+      "h1": "Datenschutz.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/datenschutz",
+      "frameWidth": 390,
+      "warning": true,
+      "h1": "Datenschutz.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/datenschutz",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Datenschutz.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/barrierefreiheit",
+      "frameWidth": 1280,
+      "warning": false,
+      "h1": "Für alle erreichbar.",
+      "scrollWidth": 1265,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1265
+    },
+    {
+      "path": "/barrierefreiheit",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Für alle erreichbar.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/barrierefreiheit",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Für alle erreichbar.",
+      "scrollWidth": 753,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        },
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 753
+    },
+    {
+      "path": "/login",
+      "frameWidth": 1280,
+      "warning": true,
+      "h1": "Gemeinsam Schule gestalten.",
+      "scrollWidth": 1280,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 1280
+    },
+    {
+      "path": "/login",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Gemeinsam Schule gestalten.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        }
+      ],
+      "width": 375
+    },
+    {
+      "path": "/login",
+      "frameWidth": 768,
+      "warning": false,
+      "h1": "Gemeinsam Schule gestalten.",
+      "scrollWidth": 768,
+      "visibleLogos": [
+        {
+          "height": 120,
+          "loaded": true,
+          "width": 240
+        }
+      ],
+      "width": 768
+    }
+  ],
+  "serviceCorrection": {
+    "before": {
+      "path": "/service",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Dein direkter Draht.",
+      "scrollWidth": 439,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    },
+    "after": {
+      "path": "/service",
+      "frameWidth": 390,
+      "warning": false,
+      "h1": "Dein direkter Draht.",
+      "scrollWidth": 375,
+      "visibleLogos": [
+        {
+          "height": 85,
+          "loaded": true,
+          "width": 170
+        },
+        {
+          "height": 71.5625,
+          "loaded": true,
+          "width": 143.125
+        }
+      ],
+      "width": 375
+    }
+  },
+  "calendar": {
+    "week": true,
+    "list": true,
+    "searchFiltersOther": true,
+    "details": true,
+    "month": true,
+    "internalAndDraftAbsent": true
+  },
+  "login": {
+    "emptyPasswordToggle": true,
+    "forgot": true
+  }
+}

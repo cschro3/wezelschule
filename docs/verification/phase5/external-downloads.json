@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-11-03T10:42:03.589174+00:00",
+  "scope": "read-only requests to existing official PDF links; no source changes",
+  "results": [
+    {
+      "title": "Anmeldebogen neue Klassenstufe 5",
+      "url": "https://www.wezelschule.de/images/verysimple/79/Anmeldebogen_RS_neue_5_Klasse_2026.pdf",
+      "status": 200,
+      "finalURL": "https://www.wezelschule.de/images/verysimple/79/Anmeldebogen_RS_neue_5_Klasse_2026.pdf",
+      "contentType": "application/pdf",
+      "pdf": true,
+      "bytesRead": 890235,
+      "sha256": "b4547471f604fe580ee1903b51ea4583a21ae916645220b72412e330a426f7d8"
+    },
+    {
+      "title": "Schüleranmeldung Klasse 5/6",
+      "url": "https://www.wezelschule.de/images/verysimple/79/01_Kl_5-6_Schlerdaten-Erfassungsbogen-Neuaufnahme_RS.pdf",
+      "status": 200,
+      "finalURL": "https://www.wezelschule.de/images/verysimple/79/01_Kl_5-6_Schlerdaten-Erfassungsbogen-Neuaufnahme_RS.pdf",
+      "contentType": "application/pdf",
+      "pdf": true,
+      "bytesRead": 178309,
+      "sha256": "7b42b26d3d66d25fd93d1ddf8b38492ae7ed912263121f3cf0b86eb6d881ca57"
+    },
+    {
+      "title": "Information Klasse 5/6 Religion - Unterricht",
+      "url": "https://www.wezelschule.de/images/verysimple/79/02_Merkblatt_zum_Religionsunterricht.pdf",
+      "status": 200,
+      "finalURL": "https://www.wezelschule.de/images/verysimple/79/02_Merkblatt_zum_Religionsunterricht.pdf",
+      "contentType": "application/pdf",
+      "pdf": true,
+      "bytesRead": 72823,
+      "sha256": "0328f51f57d3c81b6dcc60d73d82d5b768ce15bf4c3909304d1f2e54e7c3b1d1"
+    },
+    {
+      "title": "Datenschutzblatt Anmeldung Klasse 5/6 - Eltern",
+      "url": "https://www.wezelschule.de/images/verysimple/79/Kl5-3Merkblatt-Art13_Muster_ABS-02.pdf",
+      "status": 200,
+      "finalURL": "https://www.wezelschule.de/images/verysimple/79/Kl5-3Merkblatt-Art13_Muster_ABS-02.pdf",
+      "contentType": "application/pdf",
+      "pdf": true,
+      "bytesRead": 362395,
+      "sha256": "3bfa5fbb5ad73c8c95aa54b51c02acf221cefd514f0d92ff7e106cbd6db346cc"
+    },
+    {
+      "title": "Schüleranmeldung Klasse 7 bis 10",
+      "url": "https://www.wezelschule.de/images/verysimple/79/Kl7-1Schlerdaten-Erfassungsbogen-Neuaufnahme_RSOestertal.pdf",
+      "status": 200,
+      "finalURL": "https://www.wezelschule.de/images/verysimple/79/Kl7-1Schlerdaten-Erfassungsbogen-Neuaufnahme_RSOestertal.pdf",
+      "contentType": "application/pdf",
+      "pdf": true,
+      "bytesRead": 681422,
+      "sha256": "89deb9dc194610e45421aac217c09c3145ef832f173643457e958631f677cb46"
+    },
+    {
+      "title": "Datenschutzblatt Anmeldung Klasse 7 bis 10 - Eltern",
+      "url": "https://www.wezelschule.de/images/verysimple/79/Kl7-3Merkblatt-Art13_Muster_ABS-02_Kl7.pdf",
+      "status": 200,
+      "finalURL": "https://www.wezelschule.de/images/verysimple/79/Kl7-3Merkblatt-Art13_Muster_ABS-02_Kl7.pdf",
+      "contentType": "application/pdf",
+      "pdf": true,
+      "bytesRead": 362395,
+      "sha256": "d1ee07a2ba3fc4d09bd9dd5b3bccff1ea858575a1985e4f1f7f7e56b95cbb47e"
+    },
+    {
+      "title": "Anmeldung Förderverein Regelschule 2026",
+      "url": "https://www.wezelschule.de/images/verysimple/79/Aufnahmeantrag_Frderverein-2026.pdf",
+      "status": 200,
+      "finalURL": "https://www.wezelschule.de/images/verysimple/79/Aufnahmeantrag_Frderverein-2026.pdf",
+      "contentType": "application/pdf",
+      "pdf": true,
+      "bytesRead": 455205,
+      "sha256": "f96397cdf718568b9e4baa8401928415c0ecaaf573da4bade5bb0ed6329bff67"
+    }
+  ]
+}

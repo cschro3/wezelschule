@@ -1,0 +1,178 @@
+{
+  "timestamp": "2026-11-03T10:50:34.970Z",
+  "baselineVersion9": "cae689e03b31b1c866243b4d1e3c590ff0526135",
+  "scope": "compiled Worker; in-memory D1/R2; synthetic identities; local password and TOTP; no production services; not browser E2E",
+  "productionConnected": false,
+  "externalRequests": 0,
+  "passed": 18,
+  "results": [
+    {
+      "function": "Local administrator enrollment, password login and TOTP preserve existing CMS identity",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 446
+    },
+    {
+      "function": "All protected administration pages render through an actual MFA-authenticated session",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 211
+    },
+    {
+      "function": "User management, media, settings, audit and calendar overview APIs accept the same real session",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 79
+    },
+    {
+      "function": "An original synthetic SVG is securely uploaded and remains private until referenced",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 59
+    },
+    {
+      "function": "Logo, header, navigation, homepage, theme and footer persist as a private design draft",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 144
+    },
+    {
+      "function": "Draft design preview is authenticated and publication changes only isolated public content",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 200
+    },
+    {
+      "function": "A self-created valid PDF uploads without active content and remains private before document release",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 37
+    },
+    {
+      "function": "page: create, reload, review, approve and publish through MFA-authenticated CMS",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 252
+    },
+    {
+      "function": "news: create, reload, review, approve and publish through MFA-authenticated CMS",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 279
+    },
+    {
+      "function": "project: create, reload, review, approve and publish through MFA-authenticated CMS",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 241
+    },
+    {
+      "function": "document: create, reload, review, approve and publish through MFA-authenticated CMS",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 211
+    },
+    {
+      "function": "event: create, reload, review, approve and publish through MFA-authenticated CMS",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 226
+    },
+    {
+      "function": "CSV import, mapping and confirmation work with local password plus TOTP rather than platform headers",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 233
+    },
+    {
+      "function": "Referenced media deletion is denied and history remains available",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 44
+    },
+    {
+      "function": "All original public static image and font references in rendered pages exist in the build",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 21
+    },
+    {
+      "function": "Public navigation crawl evidence",
+      "result": "passed",
+      "routes": [
+        "/",
+        "/aktuelles",
+        "/aktuelles/phase5-news",
+        "/barrierefreiheit",
+        "/berufsorientierung",
+        "/datenschutz",
+        "/digitales-lernen",
+        "/downloads",
+        "/impressum",
+        "/individuelle-foerderung",
+        "/kontakt",
+        "/leitbild",
+        "/lernen",
+        "/phase5-page",
+        "/projekte",
+        "/projekte/phase5-project",
+        "/schulgebaeude",
+        "/schulsozialarbeit",
+        "/service",
+        "/termine",
+        "/unsere-schule",
+        "/vertretungsplan"
+      ],
+      "draftPagesRejected": 11,
+      "error": null,
+      "priority": null,
+      "correction": null
+    },
+    {
+      "function": "Every published page and rendered internal navigation link resolves while draft-only pages remain private",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 750
+    },
+    {
+      "function": "Logout removes access to every protected module and leaves published test content available",
+      "result": "passed",
+      "error": null,
+      "priority": null,
+      "correction": null,
+      "milliseconds": 47
+    }
+  ]
+}
