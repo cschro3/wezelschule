@@ -67,3 +67,32 @@ body,.design-surface{background:var(--paper);color:var(--ink);font-family:var(--
 
 /* Keep service cards readable within narrow phone viewports. */
 @media (max-width:600px){.service-grid{grid-template-columns:minmax(0,1fr)}.service-grid>a{min-width:0}}
+
+/* Center the native top-layer image dialog after the CSS reset. */
+.gallery-dialog{position:fixed;inset:0;margin:auto;width:min(1000px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
+.gallery-dialog img{display:block;width:100%;height:auto;max-height:calc(100dvh - 170px);object-fit:contain;margin-inline:auto}
+.gallery-dialog p{text-align:center}
+/* More working space without changing the saved page or design. */
+.workspace-width-toggle,.workspace-view-actions,.calendar-header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.cms-heading>.workspace-width-toggle{order:3;margin-left:auto}
+.workspace-view-actions{justify-content:flex-end}
+.calendar-header-actions{justify-content:flex-end}
+.calendar-admin .cms-panel{padding:24px}
+.calendar-admin .calendar-event-editor{overflow:visible;padding:0 24px 0}
+.calendar-admin .event-fields{display:grid;gap:16px;padding-top:20px}
+.calendar-admin .event-fields label:not(.checkbox-label){margin-bottom:0}
+.calendar-admin .event-fields>.form-grid{margin-top:0;gap:16px}
+.calendar-admin .event-fields>.checkbox-label{margin:0}
+.calendar-admin .event-fields>details{margin:0;padding-top:14px}
+.calendar-admin .event-fields>details>summary{margin-bottom:8px}
+.calendar-admin input:not([type=checkbox]):not([type=color]),.calendar-admin select{min-height:44px;padding:10px 12px}
+.calendar-admin .calendar-editing-heading h1{font-size:clamp(1.7rem,3vw,2.4rem)}
+.calendar-admin .calendar-editing-heading{margin-bottom:22px}
+.calendar-editor-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:15;padding:12px 0;background:#fff;border-bottom:1px solid var(--line)}
+.calendar-admin .calendar-savebar{padding-block:12px}
+.calendar-admin .calendar-event-editor>.form-grid{margin-top:18px;gap:16px}
+.calendar-admin .calendar-event-editor>.form-grid>label{margin-bottom:0}
+.editor-form .editor-title-row{position:sticky;top:0;z-index:15;background:var(--paper);padding:12px 0}
+@media(min-width:761px){.cms.cms-focus .cms-sidebar{display:none}.cms.cms-focus .cms-main{margin-left:0}.cms.cms-focus .cms-content{max-width:1800px}}
+@media(max-width:760px){.workspace-width-toggle{display:none}.calendar-editor-toolbar,.editor-form .editor-title-row{top:66px}.workspace-view-actions{justify-content:flex-start}}
+@media(max-width:600px){.calendar-admin .cms-panel{padding:18px}.calendar-admin .calendar-event-editor{padding:0 16px}.calendar-admin .event-fields>.form-grid{grid-template-columns:minmax(0,1fr)}.calendar-editor-toolbar .button{min-height:44px;padding:11px 14px}.calendar-header-actions>a{font-size:.72rem}.calendar-savebar{padding-bottom:calc(14px + env(safe-area-inset-bottom))}.gallery-dialog{width:calc(100vw - 24px);max-height:calc(100dvh - 24px);padding:16px}}

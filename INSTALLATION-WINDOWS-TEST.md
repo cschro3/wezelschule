@@ -64,6 +64,17 @@ Nach Codeänderungen den Server beenden, `npm run local:build` und `npm run loca
 
 Ein lokales Backup erfolgt bei gestopptem Server durch Kopieren von `.local-test`. Es enthält persönliche lokale Zugangsdaten/Hashes und ist vertraulich aufzubewahren. Für einen vollständigen **lokalen** Neustart dieses Verzeichnis bei gestopptem Server umbenennen; keine gehostete Datenbank anfassen.
 
+## Diese Korrektur in eine bestehende lokale Installation übernehmen
+
+Server mit Strg+C stoppen und `.local-test` bei gestopptem Server vertraulich sichern. Die Dateien aus dem aktualisierten ZIP in den vorhandenen Projektordner kopieren und vorhandene Projektdateien ersetzen. `.local-test` behalten; dieser Ordner fehlt absichtlich im ZIP. Danach im VS-Code-Terminal im Projektordner:
+
+```powershell
+npm.cmd run local:build
+npm.cmd run local:start
+```
+
+Anschließend Strg+F5 im Browser. Die Bildvergrößerung ist zentriert, lokale Abmeldung führt zu `/login`, und „Mehr Arbeitsfläche“ sowie „Vorschau ausblenden“ schaffen Platz zum Bearbeiten. Es werden keine Konten oder gespeicherten Inhalte zurückgesetzt.
+
 ## Häufige Probleme
 
 - „Ein kurzer Zwischenstopp“ direkt nach „Authenticator einrichten“: Der alte QR-Code-Import konnte beim Rendern abstürzen. Diese Version korrigiert den Import und schützt die übrige MFA-Einrichtung vor QR-Renderfehlern. Aktualisierte Dateien übernehmen, den Worker mit `npm.cmd run local:build` neu bauen, Server starten und `/account/security` mit Strg+F5 neu laden. Mit demselben Passwort erneut einrichten; `.local-test` nicht löschen.

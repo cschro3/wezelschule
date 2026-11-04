@@ -4,6 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
 import { randomBytes, createHmac } from 'node:crypto';
+import {logoutDestination} from '../app/admin/logout.ts';
 const state = await mkdtemp(join(tmpdir(), 'wezel-http-'));
 const windows = process.platform === 'win32';
 const coldInstall = process.env.WEZEL_EXPECT_COLD_INSTALL === '1';
@@ -79,8 +80,12 @@ try {
   const form = new FormData(); form.set('privacyReviewed', 'true'); form.set('file', new File(['Titel;Datum\nSynthetischer HTTP-Import;2026-11-21'], 'http-test.csv'));
   const job = await post('/api/calendar-admin/upload', form);
   const preview = await post('/api/calendar-admin/preview/' + job.id, { sheet: 0, mapping: { title: 0, date: 1 } }); assert.equal(preview.summary.invalid, 0);
-  await post('/api/auth/sign-out', {}); assert.equal((await authGet('/api/admin/overview')).status, 401);
-  results.push({ function: 'Real HTTP multipart calendar upload, preview and logout preserve boundaries', result: 'passed' });
+  const staleCookie=[...authCookies].map(([k,v])=>k+'='+v).join('; ');
+  const destination=await logoutDestination((path,options={})=>get(path,{...options,headers:{...options.headers,Origin:'http://localhost:3000',Cookie:staleCookie}}));
+  assert.equal(destination,'/login');assert.equal((await get(destination)).status,200);
+  assert.equal((await authGet('/api/admin/overview')).status,401);
+  const afterLogout=await get('/admin',{headers:{Cookie:staleCookie}});assert(afterLogout.status>=300&&afterLogout.status<400);assert(afterLogout.headers.get('location').startsWith('/login'));
+  results.push({ function: 'Real HTTP multipart import and actual UI logout helper invalidate the session and reach the login page without a platform-route 404', result: 'passed' });
   console.log(results.length + ' local HTTP/launcher checks passed on ' + process.platform + '.');
 } catch (error) {
   results.push({ function: 'Local HTTP/launcher check', result: 'failed', error: error.message }); console.error(error.stack); process.exitCode = 1;

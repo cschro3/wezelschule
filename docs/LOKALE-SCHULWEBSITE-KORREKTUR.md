@@ -72,3 +72,28 @@ Neue automatische Prüfung: `node tests/mfa-enrollment.mjs` (Teil von `npm run l
 Zusätzlicher Browsernachweis: Die echte neue MFA-Komponente wurde mit ursprünglichem Stylesheet in einer temporären Vite-Komponentenvorschau mit ausdrücklich synthetischen Daten gerendert. Im Cloud-Browser erschienen der QR-Code, zehn Testcodes, die manuelle Einrichtung und das Codefeld. Der Aktivieren-Button war vor dem Setzen der Sicherungs-Checkbox deaktiviert und danach aktiviert. Dies bestätigt die interaktive Komponentenansicht, nicht die vollständige persönliche MFA-Anmeldung im Browser. Die Backend-Anmeldung und TOTP-Bestätigung wurden separat über die reale lokale API geprüft. Die temporäre Vorschau enthält keine Konten und ist nicht Teil der ausgelieferten Anwendung.
 
 Keine Backend-, Authentifizierungs- oder Datenbankmigration geändert, keine Sicherheitsprüfung deaktiviert und kein Konto zurückgesetzt. Der bestehende pending MFA-Datensatz lässt sich durch erneutes Einrichten ersetzen; das wurde mit dem vorhandenen synthetischen Konto geprüft. Benutzer müssen nach Aktualisierung und Worker-Neubau die Kontoseite frisch laden. `.local-test` bleibt erhalten. Die Prüfung des Windows-Starts und des frisch entpackten ZIP erfolgt erneut im konkreten GitHub-Prüflauf; ein vollständiger visueller iPhone-/iPad-Abnahmelauf wird weiterhin nicht behauptet.
+
+## Bilddialog, Logout und Editorfläche – 4. November 2026
+
+Drei gemeldete Bedienfehler sind im bestehenden lokalen Quellstand korrigiert:
+
+- Der native Galerie-Dialog wird nach dem CSS-Reset ausdrücklich horizontal und vertikal im Viewport zentriert. Bild und Dialog beachten die verfügbare Höhe und Breite. Bildquelle und Alt-Text bleiben erhalten.
+- Die CMS-Abmeldung prüft die tatsächliche Anmeldeart. Lokale Passwortsitzungen werden serverseitig beendet und anschließend nach `/login` geleitet. Plattform-/Migrationsbetrieb behält seinen ChatGPT-Abmeldeweg und beendet, sofern konfiguriert, zuvor auch die native Sitzung. Bei fehlgeschlagener Status-/Abmeldeanfrage wird eine verständliche Fehlermeldung angezeigt; es wird keine erfolgreiche Abmeldung vorgetäuscht.
+- Kalender-Panels haben jetzt auch auf Desktop Innenabstände. Terminformulare verwenden kompaktere Abstände und eine zusätzliche beim Scrollen erreichbare Speicherleiste. Bereichswechsel springen nach oben und entfernen veraltete Erfolgsmeldungen. „Mehr Arbeitsfläche“ blendet auf Desktop/Tablet die Seitennavigation vorübergehend aus; „Navigation einblenden“ stellt sie wieder her. Diese Ansicht gibt es auch in Redaktion und Designer. Die Designer-Vorschau lässt sich separat ausblenden und wieder öffnen, ohne den bearbeiteten Entwurf zu verwerfen.
+
+Tatsächliche Nachweise:
+
+| Prüfung | Ergebnis |
+|---|---|
+| Vier automatisierte Logout-Prüfungen | Lokaler Weg, Plattform-/Migrationsweg mit und ohne native Konfiguration sowie abgelehnte/fehlgeschlagene Antworten bestanden. Kein Redirect bei Fehler. |
+| Echte lokale HTTP-Sitzung | Sieben Linux-Prüfungen bestanden. Der UI-Logout-Helper ruft die echte API auf; `/login` liefert anschließend 200, derselbe alte Sitzungscookie erhält an geschützten APIs 401 und `/admin` leitet zum Login weiter. |
+| Browser: Galerie, 1280 × 850 und 390 × 850 CSS-Pixel | Originalkomponente und Stylesheet mit vorhandenem öffentlichem Schulbild. Dialog exakt mittig: Desktop x=140 bei 1000 px Breite, y≈45 bei 759 px Höhe; Smartphone x=12 bei 366 px Breite, y≈258 bei 334 px Höhe. Kein horizontaler Überlauf. |
+| Browser: Kalender, 1280 / 768 / 390 CSS-Pixel | Originalkomponente mit synthetischem Termin. Desktopformular wächst von 947 auf 1185 px. Im Smartphoneformat einspaltig, kein horizontaler Überlauf; nach Scrollen um 645 px bleibt die obere Speicherleiste bei y=66 unter dem mobilen Header. Wechsel zu Kategorien setzt Scrollposition auf 0. |
+| Browser: Designer | Vorschau ausblenden plus Navigation ausblenden erweitert die Formularfläche von rund 605 auf 1215 px. Ein ungespeicherter synthetischer Slogan blieb beim Aus-/Einblenden erhalten. Bei 390 px Breite kein horizontaler Überlauf. |
+| Browser: Abmelden-Schaltfläche | Die echte Admin-Komponente führte mit synthetischen Fixture-Antworten zu `/login`, ohne 404. Die tatsächliche Sitzungssperre ist separat durch den HTTP-Test belegt. |
+
+Die temporäre Browser-Komponentenvorschau verwendet ausschließlich synthetische API-Antworten und ist nicht Teil des Pakets. Sie ersetzt keinen vollständigen persönlichen Browser-Login oder Test der geschützten Designer-Vorschau. 390/768-Pixel-Ansichten sind Browser-Layouts, keine physische iPhone-/iPad-Safari-Abnahme. Windows-Kaltstart und saubere ZIP-Installation werden erneut im zugehörigen GitHub-Workflow geprüft; verbindlich ist dessen konkretes erfolgreiches Ergebnis.
+
+Geänderte Module: `app/globals.css`, die bestehenden drei Admin-Workspaces, neuer gemeinsamer Ansichts-Schalter und Logout-Helper, Logout-Regression und bestehender HTTP-Test sowie Testkommando/Dokumentation. Keine Abhängigkeit, Migration, Rollenregel oder persistente Inhalts-/Branding-Datenquelle geändert.
+
+Aktualisierung: Lokalen Server stoppen und das vertrauliche Verzeichnis `.local-test` sichern. Aktualisierte Projektdateien in das bestehende Projekt übernehmen, `.local-test` behalten und nicht durch einen leeren Ordner ersetzen. Dann `npm.cmd run local:build` und `npm.cmd run local:start`; anschließend Browser mit Strg+F5 neu laden. Für „Mehr Arbeitsfläche“ erneut klicken, da es sich um eine temporäre Ansichtsoption handelt.
