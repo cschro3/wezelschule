@@ -1,23 +1,29 @@
 import { spawn, spawnSync } from 'node:child_process';
-import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, rm, access } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
 import { randomBytes, createHmac } from 'node:crypto';
 const state = await mkdtemp(join(tmpdir(), 'wezel-http-'));
 const windows = process.platform === 'win32';
+const coldInstall = process.env.WEZEL_EXPECT_COLD_INSTALL === '1';
 let child, output = '', stopped = false;
 const results = [];
 try {
+  if (coldInstall) {
+    assert(windows, 'The cold-install launcher check requires Windows.');
+    await assert.rejects(access(join(process.cwd(), 'node_modules')), { code: 'ENOENT' });
+  }
   // The Windows check invokes the actual double-click launcher, including build
   // and setup, rather than merely testing an equivalent shell command.
   child = spawn(windows ? process.env.ComSpec || 'cmd.exe' : process.execPath,
     windows ? ['/d', '/s', '/c', 'START-WEZEL-TEST.cmd'] : ['scripts/local-test.mjs', 'start'],
     { cwd: process.cwd(), env: { ...process.env, CI: 'true', WEZEL_LOCAL_TEST_DIRECTORY: state }, stdio: ['ignore', 'pipe', 'pipe'] });
   child.stdout.on('data', b => { output += b; }); child.stderr.on('data', b => { output += b; }); child.once('exit', () => { stopped = true; });
-  const deadline = Date.now() + 240000;
+  const deadline = Date.now() + (coldInstall ? 600000 : 240000);
   while (!output.includes('Local test ready:') && !stopped && Date.now() < deadline) await new Promise(r => setTimeout(r, 100));
   assert(!stopped && output.includes('Local test ready:'), 'Launcher did not reach ready state. ' + output.slice(-1500));
+  if (coldInstall) results.push({ function: 'Windows launcher installs dependencies from an empty node_modules state and reaches the real HTTP server', result: 'passed' });
   const get = (path, options = {}) => fetch('http://localhost:3000' + path, { redirect: 'manual', ...options });
   for (const path of ['/', '/login', '/termine', '/lokale-testseite', '/__local']) {
     const r = await get(path); assert.equal(r.status, 200, path); assert((await r.text()).length > 100);
@@ -71,5 +77,5 @@ try {
   }
   await rm(state, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
   await mkdir('tests/.generated/phase6', { recursive: true });
-  await writeFile('tests/.generated/phase6/local-http.json', JSON.stringify({ timestamp: new Date().toISOString(), platform: process.platform, node: process.version, launcher: windows ? 'START-WEZEL-TEST.cmd' : 'node scripts/local-test.mjs start', results }, null, 2) + '\n');
+  await writeFile('tests/.generated/phase6/local-http.json', JSON.stringify({ timestamp: new Date().toISOString(), platform: process.platform, node: process.version, launcher: windows ? 'START-WEZEL-TEST.cmd' : 'node scripts/local-test.mjs start', coldInstall, results }, null, 2) + '\n');
 }

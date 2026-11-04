@@ -2,6 +2,12 @@
 
 Diese Arbeitskopie erweitert den geprüften Zweig `phase5-testbetrieb` (`c68517161c6c5b6142087707c74eadc73abb41a7`) um einen lokalen Teststarter. Sie ist kein Deployment und keine neue Site. Der echte Worker und die vorhandenen Datenmodelle laufen mit Miniflare auf dem eigenen Rechner. Datenbank, Dateien und Zugangsdaten werden lokal neu angelegt.
 
+## Korrigierter Erststart vom 4. November 2026
+
+Der Fehler `EINVALIDTAGNAME: miniflare>sharp` lag im bisherigen Paket: npm wertete eine doppelt eingetragene pnpm-Override-Regel aus, bevor pnpm starten konnte. Die Regeln stehen jetzt ausschließlich in `pnpm-workspace.yaml`; die festgelegten Versionen, Lockdatei und Sicherheitsregeln bleiben erhalten. Der Windows-Prüflauf startet das `.cmd`-Skript künftig ausdrücklich ohne vorhandenen `node_modules`-Ordner und wiederholt dies im frisch entpackten Paket unter einem Pfad mit Leerzeichen und Umlaut.
+
+Bei einem bereits heruntergeladenen alten ZIP die aktualisierte Datei erneut herunterladen und in einen eigenen neuen Ordner entpacken. Vorhandene lokale Datenordner nicht löschen. Für die automatische Installation genügt Node.js 24; pnpm muss vorher nicht global installiert sein.
+
 ## Voraussetzungen
 
 - Windows 10/11 x64, Node.js **24 LTS**, VS Code; genügend freier Speicher für Abhängigkeiten.

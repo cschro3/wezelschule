@@ -14,6 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: First start through the Windows launcher without project dependencies
+        run: node tests/local-http.mjs
+        env:
+          WEZEL_EXPECT_COLD_INSTALL: '1'
       - run: npm install --global pnpm@11.25.0
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec tsc --noEmit
@@ -21,21 +25,21 @@ jobs:
       - run: npm run local:setup
       - run: npm run local:setup
       - run: npm run local:test
-      - run: node tests/local-http.mjs
       - run: node scripts/package-local-test.mjs tests/.generated/phase6/WEZEL-NEXT-LOCAL-TEST.zip
       - name: Extract self-contained test package into a clean directory
         shell: pwsh
-        run: Expand-Archive -Path tests/.generated/phase6/WEZEL-NEXT-LOCAL-TEST.zip -DestinationPath "${{ runner.temp }}/wezel-clean"
-      - run: pnpm install --frozen-lockfile
-        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
-      - run: npm run local:build
-        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
+        run: Expand-Archive -Path tests/.generated/phase6/WEZEL-NEXT-LOCAL-TEST.zip -DestinationPath "${{ runner.temp }}/WEZEL Test Ä"
+      - name: First start from the extracted package with spaces and non-ASCII path
+        run: node tests/local-http.mjs
+        working-directory: ${{ runner.temp }}/WEZEL Test Ä/WEZEL-NEXT
+        env:
+          WEZEL_EXPECT_COLD_INSTALL: '1'
+      - run: pnpm exec tsc --noEmit
+        working-directory: ${{ runner.temp }}/WEZEL Test Ä/WEZEL-NEXT
       - run: npm run local:setup
-        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
+        working-directory: ${{ runner.temp }}/WEZEL Test Ä/WEZEL-NEXT
       - run: npm run local:test
-        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
-      - run: node tests/local-http.mjs
-        working-directory: ${{ runner.temp }}/wezel-clean/WEZEL-NEXT
+        working-directory: ${{ runner.temp }}/WEZEL Test Ä/WEZEL-NEXT
       - uses: actions/upload-artifact@v4
         if: always()
         with:
