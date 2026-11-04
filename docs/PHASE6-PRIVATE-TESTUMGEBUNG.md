@@ -110,3 +110,8 @@ Erst nach positivem Nachweis: dieselbe bestehende Testprojekt-ID verwenden, auss
 
 [Maschinenlesbarer Nachweis](verification/phase6/isolation-check.json)
 
+
+
+## Unabhängiger lokaler Testweg – 3. November 2026
+
+Die gehostete Sperre bleibt bestehen. Die Betreiberanfrage ist nun unter `docs/SITES-BETREIBERANFRAGE.md` über den offiziell bestätigten Supportweg unmittelbar versendbar vorbereitet, weiterhin **nicht versandt**. Ein eigenständiger lokaler D1-/R2-Testbetrieb aus `phase5-testbetrieb` wurde auf dem Arbeitszweig `phase6-local-test` implementiert und technisch geprüft. Anleitung: `INSTALLATION-WINDOWS-TEST.md`; tatsächliche Ergebnisse und Grenzen: `docs/PHASE6-LOKALER-TESTBERICHT.md`. Dies ist keine nachträgliche Freigabe oder Bereitstellung des Sites-Testprojekts.

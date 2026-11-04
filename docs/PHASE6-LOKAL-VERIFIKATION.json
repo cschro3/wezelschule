@@ -1,0 +1,162 @@
+{
+  "timestamp": "2026-11-03T12:27:24.259Z",
+  "baseline": {
+    "repository": "cschro3/wezelschule",
+    "branch": "phase5-testbetrieb",
+    "commit": "c68517161c6c5b6142087707c74eadc73abb41a7"
+  },
+  "implementation": {
+    "branch": "phase6-local-test",
+    "commit": "6eb77128a648b0bb53e1c1f716177a5215e6fd21",
+    "applicationSourceAndExistingMigrationsUnchanged": true
+  },
+  "operatorRequest": {
+    "prepared": true,
+    "sent": false,
+    "ticket": null,
+    "reply": null,
+    "officialContact": "https://help.openai.com/en/articles/6614161-how-can-i-contact-support",
+    "hostedStorageIsolation": "unresolved; deployment remains blocked"
+  },
+  "ci": {
+    "windows": {
+      "id": 41634762106,
+      "url": "https://github.com/cschro3/wezelschule/actions/runs/41634762106",
+      "conclusion": "success",
+      "job": 125913036758,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm install --global pnpm@11.25.0",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm exec tsc --noEmit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run local:build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run local:setup",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run local:setup",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run local:test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node tests/local-http.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/package-local-test.mjs tests/.generated/phase6/WEZEL-NEXT-LOCAL-TEST.zip",
+          "conclusion": "success"
+        },
+        {
+          "name": "Extract self-contained test package into a clean directory",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run local:build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run local:setup",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run local:test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node tests/local-http.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "cleanZipInstallationBuildAndTests": "passed",
+      "localRuntimeChecks": 14,
+      "httpChecks": 6,
+      "repeatFromExtractedZip": true
+    },
+    "linux": {
+      "id": 41634762102,
+      "url": "https://github.com/cschro3/wezelschule/actions/runs/41634762102",
+      "conclusion": "success"
+    }
+  },
+  "archiveValidation": {
+    "zipIntegrity": "passed",
+    "perFileManifestHashes": "passed",
+    "originalSourceFiles": 254,
+    "intentionallyExcludedPublishedExportsAndHistoricalVerificationFiles": 32,
+    "unexpectedMissingOriginalSourceFiles": [],
+    "productionDatabaseDumpIncluded": false,
+    "localCredentialsAndSessionsIncluded": false,
+    "hostedProjectIdInDistributionManifest": false
+  },
+  "boundaries": {
+    "sitesWriteCalls": 0,
+    "deployments": 0,
+    "hostedMigrations": 0,
+    "additionalSites": 0,
+    "realEmailsSent": 0,
+    "pr1Merged": false,
+    "officialSchoolDomainChanged": false
+  },
+  "verificationLimits": [
+    "No new interactive browser/iPhone/iPad validation",
+    "Windows CI is Windows Server 2025 rather than a personal Windows 10/11 desktop",
+    "Prior Vite HMR/Suspense warning not proved fixed",
+    "User must personally set local password, TOTP and recovery storage"
+  ],
+  "protectedRepositoryRefs": {
+    "main": "aba8a0ff17c04d37df85bcc367d912178ae772f0",
+    "phase5": "c68517161c6c5b6142087707c74eadc73abb41a7",
+    "pr1": {
+      "head": "29909114f7759233469f142cabf86718beabba76",
+      "merged": false,
+      "draft": true
+    }
+  }
+}

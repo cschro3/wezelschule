@@ -42,3 +42,10 @@ jobs:
           name: windows-local-verification
           path: tests/.generated/phase6/*.json
           retention-days: 7
+
+      - name: Keep verified local test package for download
+        uses: actions/upload-artifact@v4
+        with:
+          name: wezel-next-local-test-package
+          path: tests/.generated/phase6/WEZEL-NEXT-LOCAL-TEST.zip
+          retention-days: 7
