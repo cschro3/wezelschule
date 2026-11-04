@@ -1,5 +1,7 @@
 # WEZEL NEXT – Phase 6: unabhängiger lokaler Testbetrieb
 
+**Historischer technischer Bericht.** Der aktuelle Stand mit Originalbranding und öffentlichen Schulinhalten wird in [LOKALE-SCHULWEBSITE-KORREKTUR.md](LOKALE-SCHULWEBSITE-KORREKTUR.md) dokumentiert. Die nachstehenden Aussagen über rein synthetische Startinhalte beschreiben das frühere Paket.
+
 Stand: 3. November 2026. **Lokaler Funktionstest vorbereitet und technisch geprüft; kein Deployment und keine Freigabe der gehosteten Anwendung.**
 
 ## Ergebnis und Quellstand

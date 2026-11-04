@@ -22,7 +22,8 @@ call npm.cmd run local:build
 if errorlevel 1 goto failed
 call npm.cmd run local:setup
 if errorlevel 1 goto failed
-echo Im Browser oeffnen: http://localhost:3000/__local
+echo Schulwebsite: http://localhost:3000/
+echo Redaktionszugang einrichten: http://localhost:3000/__local
 call npm.cmd run local:start
 if errorlevel 1 goto failed
 exit /b 0

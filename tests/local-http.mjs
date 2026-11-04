@@ -25,7 +25,7 @@ try {
   assert(!stopped && output.includes('Local test ready:'), 'Launcher did not reach ready state. ' + output.slice(-1500));
   if (coldInstall) results.push({ function: 'Windows launcher installs dependencies from an empty node_modules state and reaches the real HTTP server', result: 'passed' });
   const get = (path, options = {}) => fetch('http://localhost:3000' + path, { redirect: 'manual', ...options });
-  for (const path of ['/', '/login', '/termine', '/lokale-testseite', '/__local']) {
+  for (const path of ['/', '/login', '/termine', '/unsere-schule', '/__local']) {
     const r = await get(path); assert.equal(r.status, 200, path); assert((await r.text()).length > 100);
   }
   results.push({ function: 'Actual HTTP server and Windows launcher (when on Windows) serve public pages, login and setup', result: 'passed' });
@@ -38,8 +38,8 @@ try {
   const setup = await (await get('/__local', { headers: { Cookie: cookie } })).text(); assert(setup.includes('/login?mode=invite#token='));
   assert(!(await (await get('/__local')).text()).includes('#token='));
   results.push({ function: 'Local operator consent is same-origin; initial invitation is hidden until consent', result: 'passed' });
-  const content = await (await get('/api/content')).json(); assert(content.items.every(x => x.id.startsWith('local-')));
-  results.push({ function: 'Fresh HTTP environment contains only synthetic fixture content', result: 'passed' });
+  const content = await (await get('/api/content')).json(); assert(content.items.some(x => x.id === 'source-unsere-schule')); assert(content.items.every(x => x.status === 'published' && x.rights === 1)); assert(content.settings.design.brand.name.includes('Johann Karl Wezel')); assert(!content.items.some(x => x.id.startsWith('local-')));
+  results.push({ function: 'Fresh HTTP environment shows the original published school content with separate local accounts', result: 'passed' });
   const password = randomBytes(30).toString('base64url'), authCookies = new Map();
   async function post(path, body) {
     const form = body instanceof FormData;

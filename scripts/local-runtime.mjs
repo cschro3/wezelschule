@@ -4,11 +4,12 @@ import { dirname, resolve } from 'node:path';
 import { readFile, readdir, mkdir, writeFile } from 'node:fs/promises';
 import { randomBytes, createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
+import { applySchoolPreview, SCHOOL_MARKER } from './local-school.mjs';
 const require = createRequire(import.meta.url);
-export const OWNER = { id: 'local-owner', email: 'admin@wezel.invalid', name: 'Lokale Testadministration' };
+export const OWNER = { id: 'local-owner', email: 'admin@wezel.invalid', name: 'Schulredaktion' };
 export const sha256 = value => createHash('sha256').update(value).digest('hex');
 
-export async function createLocalRuntime({ stateDirectory = resolve('.local-test'), origin = 'http://localhost:3000', persist = true } = {}) {
+export async function createLocalRuntime({ stateDirectory = resolve('.local-test'), origin = 'http://localhost:3000', persist = true, fixtureMode = 'school' } = {}) {
   const url = new URL(origin);
   if (!['localhost', '127.0.0.1', '[::1]'].includes(url.hostname) || url.username || url.password) throw new Error('Only loopback origins are supported.');
   const state = resolve(stateDirectory);
@@ -17,10 +18,10 @@ export async function createLocalRuntime({ stateDirectory = resolve('.local-test
   try { config = JSON.parse(await readFile(resolve(state, 'local-config.json'), 'utf8')); }
   catch (e) {
     if (e.code !== 'ENOENT') throw e;
-    config = { format: 1, purpose: 'synthetic-local-test-only', secret: randomBytes(48).toString('hex') };
+    config = { format: 1, purpose: 'wezel-local-test-only', secret: randomBytes(48).toString('hex') };
     await writeFile(resolve(state, 'local-config.json'), JSON.stringify(config), { mode: 0o600, flag: 'wx' });
   }
-  if (config.purpose !== 'synthetic-local-test-only' || config.format !== 1 || config.secret?.length !== 96) throw new Error('Invalid local state; refusing to use it.');
+  if (!['synthetic-local-test-only', 'wezel-local-test-only'].includes(config.purpose) || config.format !== 1 || config.secret?.length !== 96) throw new Error('Invalid local state; refusing to use it.');
   const { Miniflare } = require(require.resolve('miniflare', { paths: [dirname(require.resolve('wrangler'))] }));
   const files = ['index.js', ...(await readdir('dist/server', { recursive: true })).filter(p => p !== 'index.js' && /\.(?:m?js|wasm)$/.test(p))];
   const mailbox = [], blocked = [];
@@ -30,7 +31,7 @@ export async function createLocalRuntime({ stateDirectory = resolve('.local-test
     d1Databases: { DB: 'wezel-synthetic-local-d1' }, r2Buckets: { BUCKET: 'wezel-synthetic-local-r2' },
     d1Persist: persist ? resolve(state, 'd1') : false, r2Persist: persist ? resolve(state, 'r2') : false,
     assets: { directory: resolve('dist/client'), binding: 'ASSETS', routerConfig: { has_user_worker: true } },
-    bindings: { AUTH_BASE_URL: origin, AUTH_MODE: 'local', BETTER_AUTH_SECRET: config.secret,
+    bindings: { AUTH_BASE_URL: origin, AUTH_MODE: 'local', BETTER_AUTH_SECRET: config.secret, WEZEL_LOCAL_SETUP: '1',
       // This string is an inert local marker, not a Resend key. Every fetch is intercepted below.
       RESEND_API_KEY: 'local-mail-sink-no-network', AUTH_EMAIL_FROM: 'WEZEL Test <noreply@wezel.invalid>' },
     outboundService: async request => {
@@ -55,12 +56,28 @@ export async function createLocalRuntime({ stateDirectory = resolve('.local-test
     await db.batch([...statements, db.prepare('INSERT INTO local_test_migrations(name,digest) VALUES (?,?)').bind(name, hash)]);
   }
   const seeded = await db.prepare("SELECT value FROM settings WHERE key='local-test-marker'").first();
+  let schoolReport = null, restoreSchoolAvailable = false;
+  const bucket = await mf.getR2Bucket('BUCKET');
   if (!seeded) {
     const count = await db.prepare('SELECT COUNT(*) AS n FROM users').first();
     if (count.n !== 0) throw new Error('Refusing to seed a database that already contains users.');
-    await seed(db, mf, state);
-  } else if (seeded.value !== 'synthetic-only-v1') throw new Error('Unexpected database marker.');
-  return { mf, db, mailbox, blocked, state, origin, dispose: () => mf.dispose() };
+    if (fixtureMode === 'synthetic') await seed(db, mf, state);
+    else {
+      await db.prepare('INSERT INTO users(id,email,name,role,active,created_at) VALUES (?,?,?,?,1,?)').bind(OWNER.id, OWNER.email, OWNER.name, 'SYSTEM_ADMIN', new Date().toISOString()).run();
+      schoolReport = await applySchoolPreview({ db, bucket, owner: OWNER, stateDirectory: state, backup: false });
+    }
+  } else if (seeded.value === 'synthetic-only-v1' && fixtureMode !== 'synthetic') {
+    const site = await db.prepare("SELECT * FROM settings WHERE key='site'").first();
+    const saved = site && JSON.parse(site.value);
+    const draft = await db.prepare('SELECT COUNT(*) AS n FROM design_drafts').first();
+    const history = await db.prepare('SELECT COUNT(*) AS n FROM design_history').first();
+    if (site?.version === 1 && saved?.design?.brand?.shortName === 'WEZEL TEST' && !draft.n && !history.n) {
+      schoolReport = await applySchoolPreview({ db, bucket, owner: OWNER, stateDirectory: state });
+    } else restoreSchoolAvailable = true;
+  } else if (![SCHOOL_MARKER, 'synthetic-only-v1'].includes(seeded.value)) throw new Error('Unexpected database marker.');
+  return { mf, db, mailbox, blocked, state, origin, schoolReport, restoreSchoolAvailable,
+    restoreSchool: () => applySchoolPreview({ db, bucket, owner: OWNER, stateDirectory: state }),
+    dispose: () => mf.dispose() };
 }
 
 async function seed(db, mf, state) {
@@ -95,3 +112,4 @@ async function seed(db, mf, state) {
     await db.prepare('INSERT INTO media(id,key,name,type,bytes,alt,rights,approved,uploader_id,created_at) VALUES (?,?,?,?,?,?,?,1,?,?)').bind(id, key, key, 'image/svg+xml', Buffer.byteLength(svg), 'Selbst erstelltes synthetisches Testlogo', 'Für diesen Test selbst erstellt', OWNER.id, t).run();
   }
 }
+

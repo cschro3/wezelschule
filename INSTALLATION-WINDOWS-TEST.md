@@ -2,11 +2,17 @@
 
 Diese Arbeitskopie erweitert den geprüften Zweig `phase5-testbetrieb` (`c68517161c6c5b6142087707c74eadc73abb41a7`) um einen lokalen Teststarter. Sie ist kein Deployment und keine neue Site. Der echte Worker und die vorhandenen Datenmodelle laufen mit Miniflare auf dem eigenen Rechner. Datenbank, Dateien und Zugangsdaten werden lokal neu angelegt.
 
+## Originale Schulwebsite statt Testgestaltung – 4. November 2026
+
+Der lokale Start zeigt jetzt die vorhandene Schulwebsite mit dem originalen Johann-Karl-Wezel-Logo, den veröffentlichten Design-Einstellungen, acht Inhaltsseiten und sieben Dokumenteinträgen aus dem öffentlichen Export vom 3. November 2026. Benutzerkonten, Passwörter und MFA werden weiterhin ausschließlich lokal neu eingerichtet. Die technische Einrichtung unter `/__local` ist eine getrennte Hilfe; die Schulstartseite liegt direkt unter `/`.
+
+Die beiden freigegebenen Original-Logos sind enthalten. Sechs andere hochgeladene Bilder waren im bisherigen Export mangels dokumentierter Weitergabefreigabe nicht enthalten. Für das fehlende Hero-Bild wird das bereits im Projekt vorhandene Foto des Schulgebäudes verwendet. Fehlende Bilder und die konkrete Ersatzdatei stehen in [LOKALE-SCHULWEBSITE-KORREKTUR.md](docs/LOKALE-SCHULWEBSITE-KORREKTUR.md). Es ist daher kein vollständiger aktueller Medien- oder Datenbankabzug.
+
 ## Korrigierter Erststart vom 4. November 2026
 
 Der Fehler `EINVALIDTAGNAME: miniflare>sharp` lag im bisherigen Paket: npm wertete eine doppelt eingetragene pnpm-Override-Regel aus, bevor pnpm starten konnte. Die Regeln stehen jetzt ausschließlich in `pnpm-workspace.yaml`; die festgelegten Versionen, Lockdatei und Sicherheitsregeln bleiben erhalten. Der Windows-Prüflauf startet das `.cmd`-Skript künftig ausdrücklich ohne vorhandenen `node_modules`-Ordner und wiederholt dies im frisch entpackten Paket unter einem Pfad mit Leerzeichen und Umlaut.
 
-Bei einem bereits heruntergeladenen alten ZIP die aktualisierte Datei erneut herunterladen und in einen eigenen neuen Ordner entpacken. Vorhandene lokale Datenordner nicht löschen. Für die automatische Installation genügt Node.js 24; pnpm muss vorher nicht global installiert sein.
+Bei einer vorhandenen lokalen Installation zuerst den Server mit Strg+C beenden und den gesamten Ordner sichern. Die aktualisierten Projektdateien aus dem ZIP in denselben Projektordner kopieren; `.local-test` unbedingt erhalten. Beim Start wird die unveränderte alte Testgestaltung automatisch auf den öffentlichen Schulbestand umgestellt. Eigene lokale Entwürfe, Passwörter, MFA und Konten bleiben bestehen. Wurde die alte Testgestaltung bereits selbst bearbeitet, bleibt sie erhalten; die Übernahme kann bewusst in der lokalen Einrichtung ausgelöst werden, bei eingerichtetem Zugang nur als angemeldeter Systemadministrator mit MFA. Vorher entsteht eine lokale Inhaltssicherung. Alternativ in einen neuen Ordner entpacken; dort ist ein neues lokales Konto einzurichten. Für die automatische Installation genügt Node.js 24; pnpm muss vorher nicht global installiert sein.
 
 ## Voraussetzungen
 
@@ -20,7 +26,7 @@ Bei einem bereits heruntergeladenen alten ZIP die aktualisierte Datei erneut her
 1. ZIP in einen kurzen lokalen Pfad entpacken, z. B. `C:\WEZEL-NEXT`. Nicht direkt im ZIP arbeiten.
 2. In VS Code den entpackten Projektordner öffnen.
 3. `START-WEZEL-TEST.cmd` doppelt anklicken. Es installiert bei Bedarf die festgelegten Abhängigkeiten, baut den Worker, initialisiert ausschließlich lokale Daten und startet den Testserver. Das Fenster offen lassen.
-4. http://localhost:3000/__local im Browser öffnen. „Lokale Testverwaltung öffnen“ wählen.
+4. **http://localhost:3000/** im Browser öffnen. Hier erscheint die öffentliche Schulwebsite mit eurem Logo und Inhalt. Für die persönliche Einrichtung http://localhost:3000/__local öffnen und „Redaktionszugang einrichten“ wählen.
 5. Den einmaligen Einrichtungslink wählen und **selbst** ein neues langes Passwort für `admin@wezel.invalid` festlegen. Diese Adresse ist synthetisch; es wird keine echte E-Mail versandt.
 6. Auf `/login` anmelden. Unter `/account/security` TOTP einrichten und Wiederherstellungscodes privat sichern. Ein Administrator ohne vollständige MFA erhält keinen CMS-Zugriff.
 7. Website: http://localhost:3000 · Admin: http://localhost:3000/admin · Designer: http://localhost:3000/admin/design · Import: http://localhost:3000/admin/calendar/import.
@@ -53,7 +59,8 @@ Nach Codeänderungen den Server beenden, `npm run local:build` und `npm run loca
 - Der Starter liest **keine** `.env`, `.dev.vars`, Wrangler-Remote-Konfiguration oder Sites-Projekt-ID. Er verwendet keine Cloudflare-Fernaufrufe. Alle ausgehenden Worker-HTTP-Anfragen werden abgefangen; nur synthetische Nachrichten an `@wezel.invalid` gelangen in den lokalen Postausgang. Externe Kalender-Synchronisierung und echte Mailzustellung sind hier absichtlich gesperrt.
 - Der Windows-Server lauscht ausschließlich auf `127.0.0.1:3000`, prüft Hostnamen und entfernt übergebene Sites-Identitätsheader. Nicht mit Tunneln oder Portfreigaben öffentlich zugänglich machen.
 - Vier vorhandene versionierte Migrationen werden nur auf diese neue lokale Datenbank angewandt; Prüfsummen verhindern die unbemerkte Änderung bereits angewandter Migrationen. Ein separater lokaler Migrationsnachweis ersetzt keine Produktionseinführung.
-- Der Testbestand enthält selbst erstellte Logos, erfundene Seiten, Nachrichten, Projekte und Termine. Veröffentlichungen im CMS ändern nur diese lokalen Dateien.
+- Der normale Start verwendet den geprüften öffentlichen Schulbestand und beide freigegebenen Original-Logos. Es werden keine Originalkonten, privaten Entwürfe oder Sitzungen übernommen und keine Schulnachrichten oder Termine erfunden. Die getrennten automatisierten Tests verwenden synthetische Inhalte. Alte unberührte Testeinträge werden nur archiviert; eigene bearbeitete Inhalte bleiben erhalten. Veröffentlichungen im CMS ändern ausschließlich die lokalen Dateien.
+- `.local-test/school-preview-report.json` dokumentiert importierte Inhalte, fehlende Medien und eine gegebenenfalls angelegte Sicherung. Inhaltssicherungen liegen daneben als `school-preview-before-*.json`; sie enthalten keine Authentifizierungstabellen.
 
 Ein lokales Backup erfolgt bei gestopptem Server durch Kopieren von `.local-test`. Es enthält persönliche lokale Zugangsdaten/Hashes und ist vertraulich aufzubewahren. Für einen vollständigen **lokalen** Neustart dieses Verzeichnis bei gestopptem Server umbenennen; keine gehostete Datenbank anfassen.
 
@@ -68,4 +75,4 @@ Ein lokales Backup erfolgt bei gestopptem Server durch Kopieren von `.local-test
 
 ## Tatsächliche Prüfergebnisse
 
-Siehe `docs/PHASE6-LOKALER-TESTBERICHT.md`. Ein Linux-Ergebnis wird dort nicht als Windows-Test bezeichnet. Windows-Launcher und Installation werden zusätzlich in GitHub Actions auf `windows-latest` geprüft; dessen tatsächlicher Status ist im Bericht verlinkt.
+Aktueller Nachweis: `docs/LOKALE-SCHULWEBSITE-KORREKTUR.md`. Frühere technische Nachweise: `docs/PHASE6-LOKALER-TESTBERICHT.md`. Ein Linux-Ergebnis wird dort nicht als Windows-Test bezeichnet. Windows-Launcher und Installation werden zusätzlich in GitHub Actions auf `windows-latest` geprüft; dessen tatsächlicher Status ist im Bericht verlinkt.

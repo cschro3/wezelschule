@@ -4,9 +4,9 @@ Bestehende Schulplattform der Staatlichen Regelschule „Johann Karl Wezel“ Ö
 
 ## Isolierter lokaler Testbetrieb (Phase 6)
 
-Windows: [Installationsanleitung](INSTALLATION-WINDOWS-TEST.md). `START-WEZEL-TEST.cmd` baut und startet die bestehende Anwendung auf http://localhost:3000 mit ausschließlich synthetischen Daten, eigenem lokalen D1/R2 und lokalem Mailpostausgang. Kein Cloudflare-/Sites-Zugang oder produktives Geheimnis nötig. Der einmalige Einrichtungsweg beginnt auf http://localhost:3000/__local.
+Windows: [Installationsanleitung](INSTALLATION-WINDOWS-TEST.md). `START-WEZEL-TEST.cmd` baut und startet die bestehende Anwendung auf http://localhost:3000 mit der originalen öffentlichen Schulgestaltung, den beiden freigegebenen Schullogos, acht veröffentlichten Inhaltsseiten und sieben Dokumenteinträgen. Konten und Sitzungen sind getrennte lokale Testdaten; D1/R2 und Mailpostausgang bleiben ausschließlich lokal. Kein Cloudflare-/Sites-Zugang oder produktives Geheimnis nötig. Der einmalige Einrichtungsweg beginnt auf http://localhost:3000/__local.
 
-[Betreiberanfrage, noch nicht versandt](docs/SITES-BETREIBERANFRAGE.md) · [Prüfbericht](docs/PHASE6-LOKALER-TESTBERICHT.md). Der lokale Starter veröffentlicht nichts. Ein bereinigtes Testpaket lässt sich mit `node scripts/package-local-test.mjs` erzeugen; es enthält keine veröffentlichten Datenexporte und keine gehostete Projekt-ID. Die gehostete Sites-Testbereitstellung bleibt bis zum belastbaren Speichernachweis blockiert.
+[Betreiberanfrage, noch nicht versandt](docs/SITES-BETREIBERANFRAGE.md) · [Prüfbericht](docs/PHASE6-LOKALER-TESTBERICHT.md). Der lokale Starter veröffentlicht nichts. Ein bereinigtes Testpaket lässt sich mit `node scripts/package-local-test.mjs` erzeugen; es enthält ausschließlich den geprüften öffentlichen Inhaltsstand und die zwei ausdrücklich exportierbaren Schullogos, keine Originalkonten, privaten Daten oder gehostete Projekt-ID. Sechs nicht exportierte Medien und das vorhandene Gebäude-Foto als Hero-Ersatz sind im [aktuellen Korrekturbericht](docs/LOKALE-SCHULWEBSITE-KORREKTUR.md) dokumentiert. Die gehostete Sites-Testbereitstellung bleibt bis zum belastbaren Speichernachweis blockiert.
 
 ## Stand
 

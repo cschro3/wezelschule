@@ -1,5 +1,5 @@
 // Produce a source-only local test distribution; never includes runtime state,
-// published-data exports, credentials, Git metadata or a hosted deployment ID.
+// private data, credentials, Git metadata or a hosted deployment ID.
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -22,8 +22,12 @@ async function walk(path) {
   }
 }
 await walk(root);
+// Only the already reviewed public snapshot and its two explicitly exportable
+// school logos are included. No other exports or private data are packaged.
+for (const path of ['exports/published/content.json', 'exports/published/media-manifest.json', 'exports/published/media/0e72f0df-2b4f-4575-8473-db7de6e4f43c.png', 'exports/published/media/573e7210-7adc-4910-a6d8-635adbbe7e5b.png']) await add(resolve(root, path));
 manifest.sort((a, b) => a.path.localeCompare(b.path));
-files['WEZEL-NEXT/LOCAL-TEST-PACKAGE.json'] = Buffer.from(JSON.stringify({ purpose: 'isolated synthetic local test; no hosted deployment target', baseline: 'c68517161c6c5b6142087707c74eadc73abb41a7', branch: 'phase6-local-test', exclusions: ['exports of published data', 'old verification screenshots', 'all local state, secrets and sessions', 'node_modules and generated builds', 'hosted project_id'], files: manifest }, null, 2) + '\n');
+files['WEZEL-NEXT/LOCAL-TEST-PACKAGE.json'] = Buffer.from(JSON.stringify({ purpose: 'original school appearance with isolated local test accounts; no hosted deployment target', baseline: 'c68517161c6c5b6142087707c74eadc73abb41a7', branch: 'phase6-local-test', exclusions: ['all exports except the reviewed public school snapshot and two exportable school logos', 'old verification screenshots', 'all local state, secrets and sessions', 'node_modules and generated builds', 'hosted project_id'], files: manifest }, null, 2) + '\n');
 const output = resolve(process.argv[2] || 'outputs/WEZEL-NEXT-LOCAL-TEST.zip'); await mkdir(resolve(output, '..'), { recursive: true });
 await writeFile(output, zipSync(files, { level: 6 }));
 console.log(JSON.stringify({ file: output, sourceFiles: manifest.length, bytes: (await readFile(output)).length }));
+

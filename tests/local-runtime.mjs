@@ -8,7 +8,7 @@ import { join } from 'node:path';
 import { zipSync, strToU8 } from 'fflate';
 import { createLocalRuntime, OWNER, sha256 } from '../scripts/local-runtime.mjs';
 const stateDirectory = await mkdtemp(join(tmpdir(), 'wezel-local-'));
-let runtime = await createLocalRuntime({ stateDirectory });
+let runtime = await createLocalRuntime({ stateDirectory, fixtureMode: 'synthetic' });
 const origin = 'http://localhost:3000', cookies = new Map(), results = [];
 const password = randomBytes(30).toString('base64url');
 let secret, recovery, persistedDesign, importedId;
@@ -125,7 +125,7 @@ try {
     assert.equal(runtime.blocked.length, 1);
   });
   await check('A fresh Miniflare process preserves migrations, local credentials, R2 media, designer changes and imported events', async () => {
-    await runtime.dispose(); runtime = await createLocalRuntime({ stateDirectory });
+    await runtime.dispose(); runtime = await createLocalRuntime({ stateDirectory, fixtureMode: 'synthetic' });
     assert.equal((await runtime.db.prepare('SELECT COUNT(*) AS n FROM local_test_migrations').first()).n, 4);
     assert.equal((await json('/api/security/status')).user.mfa, true);
     assert.equal((await json('/api/admin/design')).config.footer.text, persistedDesign);
