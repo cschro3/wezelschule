@@ -32,9 +32,23 @@ try {
   const admin = await get('/admin'); assert(admin.status >= 300 && admin.status < 400); assert(admin.headers.get('location').startsWith('/login'));
   assert.equal((await get('/api/admin/overview', { headers: { 'oai-authenticated-user-id': 'local-owner', 'oai-authenticated-user-email': 'admin@wezel.invalid' } })).status, 401);
   results.push({ function: 'HTTP server rejects anonymous access and forged platform headers', result: 'passed' });
-  assert.equal((await get('/__local/operator', { method: 'POST', headers: { Origin: 'https://other.invalid' } })).status, 403);
+  const setupPage = await get('/__local');
+  assert.equal(setupPage.headers.get('referrer-policy'), 'same-origin', 'The setup form must retain its real same-origin Origin during native browser POST navigation.');
+  assert.equal(setupPage.headers.get('cache-control'), 'no-store');
+  assert(setupPage.headers.get('content-security-policy').includes("form-action 'self'"));
+  assert.equal(setupPage.headers.get('set-cookie'), null);
+  const setupHTML = await setupPage.text();
+  assert(setupHTML.includes('<form method="post" action="/__local/operator">'));
+  for (const headers of [{}, { Origin: 'null' }, { Origin: 'https://other.invalid' }, { Origin: 'http://localhost:3001' }, { Referer: 'http://localhost:3000/__local' }]) {
+    const rejected = await get('/__local/operator', { method: 'POST', headers });
+    assert.equal(rejected.status, 403); assert.equal(rejected.headers.get('set-cookie'), null);
+  }
+  results.push({ function: 'Native setup form uses same-origin referrer policy; missing, null, foreign and wrong-port origins remain rejected without an operator cookie', result: 'passed' });
   const operator = await get('/__local/operator', { method: 'POST', headers: { Origin: 'http://localhost:3000' } }); assert.equal(operator.status, 303);
+  assert.equal(operator.headers.get('referrer-policy'), 'same-origin');
+  assert(operator.headers.get('set-cookie').includes('HttpOnly; SameSite=Strict'));
   const cookie = operator.headers.get('set-cookie').split(';')[0];
+  for (const Origin of ['null', 'https://other.invalid']) assert.equal((await get('/__local/restore-school', { method: 'POST', headers: { Origin, Cookie: cookie } })).status, 403);
   const setup = await (await get('/__local', { headers: { Cookie: cookie } })).text(); assert(setup.includes('/login?mode=invite#token='));
   assert(!(await (await get('/__local')).text()).includes('#token='));
   results.push({ function: 'Local operator consent is same-origin; initial invitation is hidden until consent', result: 'passed' });

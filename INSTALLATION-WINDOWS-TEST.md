@@ -66,6 +66,8 @@ Ein lokales Backup erfolgt bei gestopptem Server durch Kopieren von `.local-test
 
 ## Häufige Probleme
 
+- `Origin rejected` beim Klick auf die lokale Einrichtung: Im alten Starter war `Referrer-Policy: no-referrer` gesetzt. Diese Version verwendet für das Einrichtungsformular `same-origin`; fehlende, `null`- oder fremde Origins bleiben gesperrt. Projektdateien aktualisieren, den lokalen Server neu starten und http://localhost:3000/__local frisch öffnen; eine alte Fehlerseite nicht erneut absenden. `.local-test` behalten.
+
 - `node` nicht gefunden: Node.js 24 installieren, Terminal neu starten.
 - PowerShell blockiert `npx.ps1`: `npx.cmd --yes pnpm@11.25.0 install --frozen-lockfile` verwenden oder das `.cmd`-Startskript starten.
 - Port 3000 belegt: vorhandenen lokalen Testserver beenden. Kein zweites Startfenster öffnen.

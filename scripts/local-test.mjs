@@ -31,7 +31,9 @@ if (command === 'setup') {
       if (!allowed.has(req.headers.host)) { res.writeHead(403); return res.end('Unsupported host.'); }
       const url = new URL(req.url, origin);
       if (url.origin !== origin && !allowed.has(url.host)) { res.writeHead(403); return res.end('Unsupported target.'); }
-      res.setHeader('Cache-Control', 'no-store'); res.setHeader('X-Robots-Tag', 'noindex, nofollow'); res.setHeader('X-Content-Type-Options', 'nosniff'); res.setHeader('Referrer-Policy', 'no-referrer');
+      res.setHeader('Cache-Control', 'no-store'); res.setHeader('X-Robots-Tag', 'noindex, nofollow'); res.setHeader('X-Content-Type-Options', 'nosniff'); res.setHeader('Referrer-Policy', 'same-origin');
+      // Native POST forms need a non-opaque same-origin Origin. no-referrer
+      // would make browser navigations send Origin: null; never allow that.
       if (url.pathname.startsWith('/__local')) {
         res.setHeader('Content-Security-Policy', "default-src 'none'; img-src 'self'; font-src 'self'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'");
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
