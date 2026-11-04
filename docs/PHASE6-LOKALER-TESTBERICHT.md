@@ -141,3 +141,12 @@ Neu/angepasst: `scripts/local-runtime.mjs`, `scripts/local-test.mjs`, `scripts/p
 Die GitHub-Prüfungen des Implementierungsstands wurden erneut ausgelesen: Linux- und Windows-Lauf weiterhin erfolgreich; PR #1 weiterhin offen, Draft und ungemergt. Die temporäre lokale Arbeitskopie und das letzte Downloadpaket wurden durch automatische Workspace-Bereinigung entfernt. Der Abschlussbericht wird deshalb im Testzweig gesichert; das bereinigte Paket wird direkt aus dem unveränderten Anwendungscode über den vorhandenen Windows-Prüflauf neu erstellt und als GitHub-Artefakt verfügbar gemacht. Alle bisherigen Paketfilter und die erneute Installation aus dem ZIP bleiben erhalten. Es werden keine Originaldaten importiert und keine Sites-Bereitstellung ausgeführt.
 
 Die einzige technische Anpassung dieser Fortsetzung ist das zusätzliche Aufbewahren des bereits erzeugten ZIP im Windows-Workflow. Anwendungs-, Authentifizierungs- und Migrationsdateien bleiben unverändert. Die Betreiberanfrage bleibt vorbereitet und nicht versandt.
+
+
+### Abgeschlossener Downloadnachweis – 4. November 2026
+
+Der erneute Windows-Lauf ist erfolgreich abgeschlossen: https://github.com/cschro3/wezelschule/actions/runs/41785947442. Auch die Linux-Regression ist erfolgreich: https://github.com/cschro3/wezelschule/actions/runs/41785947412. Das ZIP wurde nach sauberem Entpacken erneut installiert, gebaut und mit 14 Laufzeit- sowie sechs HTTP-Prüfungen getestet. Der echte Windows-Starter wurde dabei ausgeführt.
+
+Das heruntergeladene Paket stammt unverändert aus dem GitHub-Artefakt des Quellstands `b08da16a7beeabf6668a6c3b58663a6d1c755eb7`. Größe: **733.694 Bytes**. SHA-256: `8d258866e7a3e138760ba2ced2e453bd1f7a509a98808ef9206da9942b6079d8`. Archivintegrität, sämtliche Manifestprüfsummen und Quellinhalte gegen den GitHub-Baum sind geprüft. Für den Git-Vergleich wurden ausschließlich Windows-Zeilenenden normalisiert; die heruntergeladenen ZIP-Bytes wurden dabei nicht geändert. Nur das Hostingmanifest wird absichtlich ohne gehostete Projekt-ID ausgeliefert.
+
+Der vollständige maschinenlesbare Nachweis steht in `docs/PHASE6-DOWNLOAD-VERIFIKATION.json`. Die persönliche Browser-/Geräteabnahme und die verbindliche Betreiberantwort bleiben offen. Keine Supportnachricht wurde versandt, keine gehostete Migration oder Bereitstellung ausgeführt und PR #1 nicht gemergt.

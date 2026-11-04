@@ -1,0 +1,15 @@
+{
+  "file": "WEZEL-NEXT-LOCAL-TEST.zip",
+  "bytes": 733694,
+  "sha256": "8d258866e7a3e138760ba2ced2e453bd1f7a509a98808ef9206da9942b6079d8",
+  "archive_integrity": "passed",
+  "manifest_hashes": "passed",
+  "source_hashes": "passed; Windows CRLF normalized for Git comparison only; downloaded bytes unchanged",
+  "windows_crlf_files": 230,
+  "source_files": 237,
+  "total_entries": 238,
+  "outer_sha256": "7d7f32cef4c8eacbda15e3068ab3b647970762719cc262ee800e928350642930",
+  "windows_ci": "https://github.com/cschro3/wezelschule/actions/runs/41785947442",
+  "linux_ci": "https://github.com/cschro3/wezelschule/actions/runs/41785947412",
+  "source_commit": "b08da16a7beeabf6668a6c3b58663a6d1c755eb7"
+}
