@@ -15,7 +15,7 @@
     "local:build": "node node_modules/vinext/dist/cli.js build",
     "local:setup": "node scripts/local-test.mjs setup",
     "local:start": "node scripts/local-test.mjs start",
-    "local:test": "node tests/local-runtime.mjs && node tests/school-preview.mjs"
+    "local:test": "node tests/local-runtime.mjs && node tests/school-preview.mjs && node tests/mfa-enrollment.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
