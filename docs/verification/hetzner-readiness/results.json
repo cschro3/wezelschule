@@ -1,0 +1,88 @@
+{
+  "checkedAt": "2026-11-05T10:34:26.550Z",
+  "sourceBaseline": "6124b9732c6bf4f0665cd7d9f0fc46daf3ce7b2e",
+  "node": "v24.22.1",
+  "target": "Hetzner Webhosting L, native Node.js, not deployed",
+  "sourceExistingFilesModified": false,
+  "installation": {
+    "frozenLockfile": true,
+    "exitCode": 0
+  },
+  "typescript": {
+    "exitCode": 0
+  },
+  "unitTests": {
+    "passed": 35,
+    "failed": 0
+  },
+  "nativeNodeBuild": {
+    "format": 1,
+    "checkedAt": "2026-11-05T10:33:30.096Z",
+    "target": "native Node standalone; no Cloudflare plugin or runtime shims",
+    "node": "v24.22.1",
+    "exitCode": 7,
+    "compatible": false,
+    "durationSeconds": 4.09,
+    "metrics": null,
+    "failure": "Unresolved cloudflare:workers import in actual application",
+    "isolation": {
+      "freshTemporaryCopy": true,
+      "copiedEnvironmentFiles": false,
+      "copiedRuntimeState": false,
+      "sourceConfigUnchanged": true,
+      "deployed": false
+    }
+  },
+  "originalWorkerBuild": {
+    "exitCode": 0,
+    "durationSeconds": 11.48,
+    "mainNodeProcessPeakRSSMiB": 1557.18,
+    "scope": "build time, this Node process only; not serving RAM or total process-tree RAM"
+  },
+  "localHttpRegression": {
+    "passed": 7,
+    "failed": 0,
+    "checks": [
+      {
+        "function": "Actual HTTP server and Windows launcher (when on Windows) serve public pages, login and setup",
+        "result": "passed"
+      },
+      {
+        "function": "HTTP server rejects anonymous access and forged platform headers",
+        "result": "passed"
+      },
+      {
+        "function": "Native setup form uses same-origin referrer policy; missing, null, foreign and wrong-port origins remain rejected without an operator cookie",
+        "result": "passed"
+      },
+      {
+        "function": "Local operator consent is same-origin; initial invitation is hidden until consent",
+        "result": "passed"
+      },
+      {
+        "function": "Fresh HTTP environment shows the original published school content with separate local accounts",
+        "result": "passed"
+      },
+      {
+        "function": "Real HTTP setup link, password login, mandatory TOTP and authenticated CMS pages work together",
+        "result": "passed"
+      },
+      {
+        "function": "Real HTTP multipart import and actual UI logout helper invalidate the session and reach the login page without a platform-route 404",
+        "result": "passed"
+      }
+    ],
+    "launcherNodePeakRSSMiB": 269.33,
+    "scope": "local Miniflare launcher Node process only; actual workerd memory excluded; not native Node app capacity"
+  },
+  "actualHetznerTests": {
+    "status": "not-performed",
+    "reason": "No Hetzner test account/server or provider capacity confirmation available"
+  },
+  "processTreeMemory": {
+    "status": "unavailable",
+    "reason": "External process IDs do not correspond reliably to /proc IDs in this execution environment; no total memory claim"
+  },
+  "readyToBuyLBasedOnThisAudit": false,
+  "productionReady": false
+}

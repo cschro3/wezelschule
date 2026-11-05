@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "checkedAt": "2026-11-05T10:34:26.550Z",
+  "scope": "read-only source audit and native Node import probe; no Hetzner server access",
+  "sourceBaseline": "6124b9732c6bf4f0665cd7d9f0fc46daf3ce7b2e",
+  "node": "v24.22.1",
+  "cloudflareImports": 12,
+  "checks": [
+    {
+      "id": "node-version",
+      "status": "passed",
+      "detail": "Checked local Node runtime: v24.22.1. Hetzner must separately confirm the selected runtime."
+    },
+    {
+      "id": "cloudflare-runtime",
+      "status": "blocked",
+      "detail": "Native Node import result: {\"supported\":false,\"code\":\"ERR_UNSUPPORTED_ESM_URL_SCHEME\"}",
+      "files": [
+        "app/api/admin/[...path]/route.ts",
+        "app/api/calendar-admin/[...path]/route.ts",
+        "app/api/favicon/route.ts",
+        "app/api/files/[id]/route.ts",
+        "app/api/security/[...path]/route.ts",
+        "app/login/page.tsx",
+        "lib/calendar-store.ts",
+        "lib/design-store.ts",
+        "lib/security/auth.ts",
+        "lib/security/mail.ts",
+        "lib/server.ts",
+        "db/index.ts"
+      ]
+    },
+    {
+      "id": "database-adapter",
+      "status": "blocked",
+      "detail": "Current Drizzle adapter and transactional operations depend on D1. A native persistent database adapter and migration/restore verification are required.",
+      "files": [
+        "app/api/admin/[...path]/route.ts",
+        "app/api/calendar-admin/[...path]/route.ts",
+        "lib/calendar-store.ts",
+        "lib/design-store.ts",
+        "db/index.ts"
+      ]
+    },
+    {
+      "id": "media-adapter",
+      "status": "blocked",
+      "detail": "Private and approved media use R2 bindings. A persistent storage adapter with the same authorization rules is required.",
+      "files": [
+        "app/api/admin/[...path]/route.ts",
+        "app/api/favicon/route.ts",
+        "app/api/files/[id]/route.ts"
+      ]
+    },
+    {
+      "id": "production-start",
+      "status": "blocked",
+      "detail": "Current start command: node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0"
+    },
+    {
+      "id": "password-wasm",
+      "status": "manual-review",
+      "detail": "Argon2id currently imports a Worker-compiled WebAssembly module. Verify the native Node build/loader and compatibility with existing password hashes; do not replace hashing or reset accounts to hide a runtime problem."
+    },
+    {
+      "id": "mail-transport",
+      "status": "manual-review",
+      "detail": "Current security mail uses the external Resend API; the local test captures synthetic messages. Decide the real mail provider and test its transport. An SMTP provider requires an adapter, not just an SMTP environment variable."
+    },
+    {
+      "id": "proxy-and-origin",
+      "status": "manual-review",
+      "detail": "Confirm Hetzner port/socket handoff, trusted client-IP headers and HTTPS forwarding; force password-only AUTH_MODE=local outside Sites and reject forged platform identity headers. Retain CSRF, Secure cookies, MFA and security headers."
+    },
+    {
+      "id": "node-capacity",
+      "status": "unverified",
+      "detail": "The advertised PHP memory_limit is not a Node.js RAM allocation. Node RAM/CPU/process limits require provider confirmation and a native-app load test."
+    },
+    {
+      "id": "storage-and-backup",
+      "status": "unverified",
+      "detail": "Confirm writable private storage outside the document root, filesystem/locking behavior, database availability, backup location and consistent database restore."
+    },
+    {
+      "id": "domain-cutover",
+      "status": "not-performed",
+      "detail": "Existing domain, DNS, mail records and website are untouched. No hosting order or deployment was made."
+    }
+  ],
+  "readyForUnchangedNodeDeployment": false,
+  "purchaseRecommendation": "Do not regard Node.js support alone as a compatibility or capacity confirmation."
+}
